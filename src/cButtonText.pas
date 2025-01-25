@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T19:36:54.000+01:00
-/// Signature : ee829e4f15b06f1b7c0dd36368f7962cc1105ed1
+/// File last update : 2025-01-25T22:46:18.000+01:00
+/// Signature : a0848040c9005b7c90a2d48507c04037e50339a8
 /// ***************************************************************************
 /// </summary>
 
@@ -79,6 +79,8 @@ function TButtonText.GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
 begin
   if (AChar = 'ç') then
     result := Sender.getImageIndexOfChar('C')
+  else if (AChar = 'é') then
+    result := Sender.getImageIndexOfChar('E')
   else
     result := Sender.getImageIndexOfChar(UpperCase(AChar));
 end;
