@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T15:32:14.000+01:00
-/// Signature : 84dde60c67568add7404743cedc2fad347d74847
+/// File last update : 2025-01-25T16:24:30.000+01:00
+/// Signature : a9d9967e86ad7d90d29e6d1b0d4483fb0b84abf2
 /// ***************************************************************************
 /// </summary>
 
@@ -40,7 +40,7 @@ uses
   Olf.FMX.AboutDialog in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialog.pas',
   Olf.FMX.AboutDialogForm in '..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialogForm.pas' {OlfAboutDialogForm},
   u_urlOpen in '..\lib-externes\librairies\src\u_urlOpen.pas',
-  uConsts in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uConsts.pas',
+  uConsts in 'uConsts.pas',
   Olf.RTL.Language in '..\lib-externes\librairies\src\Olf.RTL.Language.pas',
   Olf.RTL.CryptDecrypt in '..\lib-externes\librairies\src\Olf.RTL.CryptDecrypt.pas',
   Olf.RTL.Params in '..\lib-externes\librairies\src\Olf.RTL.Params.pas',
