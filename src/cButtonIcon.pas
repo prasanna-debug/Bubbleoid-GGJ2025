@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T21:07:10.000+01:00
-/// Signature : b2c5569f24b7e54773cc22ba97a515f4b045b574
+/// File last update : 2025-01-25T21:51:38.000+01:00
+/// Signature : 7383fe76db3b872aa6dc05b4424d1b64b6eda096
 /// ***************************************************************************
 /// </summary>
 
@@ -68,11 +68,7 @@ type
       write SetBackgroundColor;
     property IconType: TIconType read FIconType write SetIconType;
     procedure Repaint; override;
-
   end;
-
-var
-  ButtonIcon: TButtonIcon;
 
 implementation
 
