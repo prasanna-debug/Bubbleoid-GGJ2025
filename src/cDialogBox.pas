@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T22:10:02.000+01:00
-/// Signature : fb325ea88dc7f4ce78b5c990c813e63731f39362
+/// File last update : 2025-01-25T22:16:28.000+01:00
+/// Signature : 3a77a4483e826a419619b0c5707797e54efd07da
 /// ***************************************************************************
 /// </summary>
 
@@ -70,6 +70,8 @@ type
     function GetText: string;
     function GetTitle: string;
   protected
+    function GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
+      AChar: char): integer;
   public
     procedure AfterConstruction; override;
     property Title: string read GetTitle write SetTitle;
@@ -82,6 +84,7 @@ type
   // TODO : intercepter les changements d'orientation sur smartphones et tablettes
   // TODO : référencer le bouton BACK
   // TODO : prendre en charge la traduction
+  // TODO : s'assurer que le titre ne déborde pas de la largeur de son conteneur
 
 implementation
 
@@ -97,6 +100,7 @@ procedure TDialogBox.AfterConstruction;
 begin
   inherited;
   tiTitle.Font := dmAdobeStock_497062500.ImageList;
+  tiTitle.OnGetImageIndexOfUnknowChar := GetImageIndexOfUnknowChar;
   tiTitle.Text := '';
   TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
   // TODO : traduction à adapter plus tard
@@ -114,6 +118,15 @@ begin
   db := TDialogBox.create(AOwner);
   db.Title := ATitle;
   db.Text := AText;
+end;
+
+function TDialogBox.GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
+  AChar: char): integer;
+begin
+  if (AChar = 'ç') then
+    result := Sender.getImageIndexOfChar('C')
+  else
+    result := Sender.getImageIndexOfChar(UpperCase(AChar));
 end;
 
 function TDialogBox.GetText: string;
