@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T16:53:18.000+01:00
-/// Signature : 3054fb7966a1ce33c822fec19cac75d77f2902fe
+/// File last update : 2025-01-25T19:04:54.000+01:00
+/// Signature : 8861d801b8e924504c941a25237ef2c229b60678
 /// ***************************************************************************
 /// </summary>
 
@@ -73,10 +73,16 @@ uses
   uSoundEffects in 'uSoundEffects.pas',
   USVGInputPrompts in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
   uDMGameControllerCenter in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
-  uSVGBitmapManager_InputPrompts in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uSVGBitmapManager_InputPrompts.pas',
+  uSVGBitmapManager_InputPrompts in 'uSVGBitmapManager_InputPrompts.pas',
   uDMHelpBarManager in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
   _ButtonsAncestor in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
-  uSceneBackground in 'uSceneBackground.pas' {SceneBackground: TFrame};
+  uSceneBackground in 'uSceneBackground.pas' {SceneBackground: TFrame},
+  cButtonText in 'cButtonText.pas' {ButtonText: TFrame},
+  USVGBubbleFont in '..\_PRIVATE\assets\AdobeStock\AdobeStock_244522135_244522157\USVGBubbleFont.pas',
+  udmAdobeStock_497062500 in '..\_PRIVATE\assets\AdobeStock\AdobeStock_497062500\udmAdobeStock_497062500.pas' {dmAdobeStock_497062500: TDataModule},
+  USVGAdobeStock in '..\_PRIVATE\assets\AdobeStock\SVG-du-jeu\USVGAdobeStock.pas',
+  Olf.FMX.TextImageFrame in '..\lib-externes\librairies\src\Olf.FMX.TextImageFrame.pas' {OlfFMXTextImageFrame: TFrame},
+  uSceneTestButtonsAndDialogs in 'uSceneTestButtonsAndDialogs.pas' {SceneTestButtonsAndDialogs: TFrame};
 
 {$R *.res}
 
@@ -85,5 +91,6 @@ begin
   Application.Initialize;
   Application.CreateForm(TfrmMain, frmMain);
   Application.CreateForm(TDMGameControllerCenter, DMGameControllerCenter);
+  Application.CreateForm(TdmAdobeStock_497062500, dmAdobeStock_497062500);
   Application.Run;
 end.
