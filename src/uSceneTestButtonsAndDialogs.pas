@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T21:11:40.000+01:00
-/// Signature : 70feb98cebd2dbdf1ff6710c7a06ba3c7f47ab11
+/// File last update : 2025-01-25T22:08:22.000+01:00
+/// Signature : 5204c4d7e37743398755e7099dd7c8e276ce7e6d
 /// ***************************************************************************
 /// </summary>
 
@@ -49,7 +49,8 @@ uses
   _ScenesAncestor,
   _ButtonsAncestor,
   cButtonText,
-  cButtonIcon;
+  cButtonIcon,
+  cDialogBox;
 
 type
   TSceneTestButtonsAndDialogs = class(T__SceneAncestor)
@@ -60,6 +61,7 @@ type
     ButtonIcon3: TButtonIcon;
     ButtonIcon4: TButtonIcon;
     ButtonIcon5: TButtonIcon;
+    DialogBox1: TDialogBox;
     procedure ButtonText1Click(Sender: TObject);
     procedure ButtonText2Click(Sender: TObject);
   private
@@ -127,11 +129,15 @@ begin
   begin
     ButtonText1.Text := 'En français';
     ButtonText2.Text := 'En anglais';
+    DialogBox1.Title := 'Ma Boite De Dialogue';
+    DialogBox1.Text := 'coucou c''est moi';
   end
   else
   begin
     ButtonText1.Text := 'In French';
     ButtonText2.Text := 'In English';
+    DialogBox1.Title := 'My Dialog Box';
+    DialogBox1.Text := 'hello it''s me';
   end;
 end;
 
