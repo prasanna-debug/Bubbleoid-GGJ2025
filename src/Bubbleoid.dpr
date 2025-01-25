@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T16:37:32.000+01:00
-/// Signature : 4f8846e08d4251f6bc53c732b471a9f054e0e840
+/// File last update : 2025-01-25T16:42:00.000+01:00
+/// Signature : 977b8079f202e7f547fb982fc69ce51029ca27bb
 /// ***************************************************************************
 /// </summary>
 
@@ -47,8 +47,8 @@ uses
   Olf.Skia.SVGToBitmap in '..\lib-externes\librairies\src\Olf.Skia.SVGToBitmap.pas',
   uDMAboutBox in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMAboutBox.pas' {AboutBox: TDataModule},
   uDMAboutBoxLogoStorrage in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMAboutBoxLogoStorrage.pas' {dmAboutBoxLogo: TDataModule},
-  uTxtAboutLicense in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uTxtAboutLicense.pas',
-  uTxtAboutDescription in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uTxtAboutDescription.pas',
+  uTxtAboutLicense in 'uTxtAboutLicense.pas',
+  uTxtAboutDescription in 'uTxtAboutDescription.pas',
   Gamolf.FMX.HelpBar in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.HelpBar.pas',
   Gamolf.FMX.Joystick in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.Joystick.pas',
   Gamolf.FMX.MusicLoop in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas',
