@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T16:42:00.000+01:00
-/// Signature : 977b8079f202e7f547fb982fc69ce51029ca27bb
+/// File last update : 2025-01-25T16:53:18.000+01:00
+/// Signature : 3054fb7966a1ce33c822fec19cac75d77f2902fe
 /// ***************************************************************************
 /// </summary>
 
@@ -46,7 +46,7 @@ uses
   Olf.RTL.Params in '..\lib-externes\librairies\src\Olf.RTL.Params.pas',
   Olf.Skia.SVGToBitmap in '..\lib-externes\librairies\src\Olf.Skia.SVGToBitmap.pas',
   uDMAboutBox in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMAboutBox.pas' {AboutBox: TDataModule},
-  uDMAboutBoxLogoStorrage in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMAboutBoxLogoStorrage.pas' {dmAboutBoxLogo: TDataModule},
+  uDMAboutBoxLogoStorrage in 'uDMAboutBoxLogoStorrage.pas' {dmAboutBoxLogo: TDataModule},
   uTxtAboutLicense in 'uTxtAboutLicense.pas',
   uTxtAboutDescription in 'uTxtAboutDescription.pas',
   Gamolf.FMX.HelpBar in '..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.HelpBar.pas',
@@ -70,7 +70,7 @@ uses
   Olf.RTL.Streams in '..\lib-externes\librairies\src\Olf.RTL.Streams.pas',
   Olf.RTL.Maths.Conversions in '..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas',
   uBackgroundMusic in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uBackgroundMusic.pas',
-  uSoundEffects in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uSoundEffects.pas',
+  uSoundEffects in 'uSoundEffects.pas',
   USVGInputPrompts in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas',
   uDMGameControllerCenter in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMGameControllerCenter.pas' {DMGameControllerCenter: TDataModule},
   uSVGBitmapManager_InputPrompts in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uSVGBitmapManager_InputPrompts.pas',
