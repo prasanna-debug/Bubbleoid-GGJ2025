@@ -1,0 +1,51 @@
+inherited ButtonText: TButtonText
+  Size.Width = 352.000000000000000000
+  Size.Height = 124.000000000000000000
+  object rBackground: TRectangle
+    Align = Client
+    Fill.Bitmap.WrapMode = Tile
+    Fill.Kind = Bitmap
+    Locked = True
+    HitTest = False
+    Size.Width = 352.000000000000000000
+    Size.Height = 124.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object rFocused: TRectangle
+      Align = Left
+      Fill.Bitmap.WrapMode = Tile
+      Fill.Kind = Bitmap
+      Locked = True
+      HitTest = False
+      Margins.Left = -10.000000000000000000
+      Margins.Top = 34.000000000000000000
+      Margins.Bottom = 40.000000000000000000
+      Position.X = -10.000000000000000000
+      Position.Y = 34.000000000000000000
+      RotationAngle = -115.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+    object lText: TLayout
+      Align = Contents
+      Margins.Left = 34.000000000000000000
+      Margins.Top = 44.000000000000000000
+      Margins.Right = 34.000000000000000000
+      Margins.Bottom = 50.000000000000000000
+      Size.Width = 284.000000000000000000
+      Size.Height = 30.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      inline tiText: TOlfFMXTextImageFrame
+        Align = Center
+        Locked = True
+        HitTest = False
+        Size.Width = 0.000000000000000000
+        Size.Height = 30.000000000000000000
+        Size.PlatformDefault = False
+      end
+    end
+  end
+end
