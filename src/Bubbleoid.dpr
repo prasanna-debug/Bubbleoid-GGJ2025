@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T16:24:30.000+01:00
-/// Signature : a9d9967e86ad7d90d29e6d1b0d4483fb0b84abf2
+/// File last update : 2025-01-25T16:37:32.000+01:00
+/// Signature : 4f8846e08d4251f6bc53c732b471a9f054e0e840
 /// ***************************************************************************
 /// </summary>
 
@@ -76,7 +76,7 @@ uses
   uSVGBitmapManager_InputPrompts in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uSVGBitmapManager_InputPrompts.pas',
   uDMHelpBarManager in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMHelpBarManager.pas' {HelpBarManager: TDataModule},
   _ButtonsAncestor in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\_ButtonsAncestor.pas' {__ButtonAncestor: TFrame},
-  uSceneBackground in '..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uSceneBackground.pas' {SceneBackground: TFrame};
+  uSceneBackground in 'uSceneBackground.pas' {SceneBackground: TFrame};
 
 {$R *.res}
 
