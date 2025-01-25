@@ -1,4 +1,4 @@
-# Bubbleoïd
+# Bubbleoid
 
 [This page in English.](README.md)
 

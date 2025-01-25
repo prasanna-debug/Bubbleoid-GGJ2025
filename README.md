@@ -1,4 +1,4 @@
-# Bubbleoïd
+# Bubbleoid
 
 [Cette page en français.](LISEZMOI.md)
 
