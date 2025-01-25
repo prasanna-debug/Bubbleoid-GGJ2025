@@ -1,0 +1,30 @@
+inherited ButtonIcon: TButtonIcon
+  Size.Width = 54.000000000000000000
+  Size.Height = 54.000000000000000000
+  object rBackground: TRectangle
+    Align = Client
+    Fill.Bitmap.WrapMode = TileStretch
+    Fill.Kind = Bitmap
+    Locked = True
+    HitTest = False
+    Size.Width = 54.000000000000000000
+    Size.Height = 54.000000000000000000
+    Size.PlatformDefault = False
+    Stroke.Kind = None
+    object rIcon: TRectangle
+      Align = Client
+      Fill.Bitmap.WrapMode = TileStretch
+      Fill.Kind = Bitmap
+      Locked = True
+      HitTest = False
+      Margins.Left = 15.000000000000000000
+      Margins.Top = 15.000000000000000000
+      Margins.Right = 15.000000000000000000
+      Margins.Bottom = 15.000000000000000000
+      Size.Width = 24.000000000000000000
+      Size.Height = 24.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+  end
+end
