@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T19:04:54.000+01:00
-/// Signature : 8861d801b8e924504c941a25237ef2c229b60678
+/// File last update : 2025-01-25T20:52:06.000+01:00
+/// Signature : 2383ae1ff292d988fac8fb99517c03ded0b36721
 /// ***************************************************************************
 /// </summary>
 
@@ -82,7 +82,8 @@ uses
   udmAdobeStock_497062500 in '..\_PRIVATE\assets\AdobeStock\AdobeStock_497062500\udmAdobeStock_497062500.pas' {dmAdobeStock_497062500: TDataModule},
   USVGAdobeStock in '..\_PRIVATE\assets\AdobeStock\SVG-du-jeu\USVGAdobeStock.pas',
   Olf.FMX.TextImageFrame in '..\lib-externes\librairies\src\Olf.FMX.TextImageFrame.pas' {OlfFMXTextImageFrame: TFrame},
-  uSceneTestButtonsAndDialogs in 'uSceneTestButtonsAndDialogs.pas' {SceneTestButtonsAndDialogs: TFrame};
+  uSceneTestButtonsAndDialogs in 'uSceneTestButtonsAndDialogs.pas' {SceneTestButtonsAndDialogs: TFrame},
+  cButtonIcon in 'cButtonIcon.pas' {ButtonIcon: TFrame};
 
 {$R *.res}
 
