@@ -1,0 +1,12 @@
+[submodule "lib-externes/AboutDialog-Delphi-Component"]
+	path = lib-externes/AboutDialog-Delphi-Component
+	url = https://github.com/DeveloppeurPascal/AboutDialog-Delphi-Component
+[submodule "lib-externes/Delphi-Game-Engine"]
+	path = lib-externes/Delphi-Game-Engine
+	url = https://github.com/DeveloppeurPascal/Delphi-Game-Engine.git
+[submodule "lib-externes/Gamolf-FMX-Game-Starter-Kit"]
+	path = lib-externes/Gamolf-FMX-Game-Starter-Kit
+	url = https://github.com/DeveloppeurPascal/Gamolf-FMX-Game-Starter-Kit.git
+[submodule "lib-externes/librairies"]
+	path = lib-externes/librairies
+	url = https://github.com/DeveloppeurPascal/librairies.git
