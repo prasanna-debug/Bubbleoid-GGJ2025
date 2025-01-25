@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T19:04:26.000+01:00
-/// Signature : 73de6d765e85609faa86c9cc5a2260c91326cd7b
+/// File last update : 2025-01-25T22:20:02.000+01:00
+/// Signature : 3f8240ba899e0641bf576996805d011bbad2fcf0
 /// ***************************************************************************
 /// </summary>
 
@@ -188,8 +188,8 @@ Const
   /// <remarks>
   /// Change it to an other scene, like a game intro or a splashscreen
   /// </remarks>
-  // CDefaultSceneOnStartup = TSceneType.Home;
-  CDefaultSceneOnStartup = TSceneType.TestButtonsAndDialogs;
+  CDefaultSceneOnStartup = TSceneType.Home;
+  // CDefaultSceneOnStartup = TSceneType.TestButtonsAndDialogs;
 {$IF Defined(RELEASE)}
 
 var
