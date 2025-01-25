@@ -1,0 +1,126 @@
+inherited SceneHome: TSceneHome
+  Size.Width = 1021.000000000000000000
+  Size.Height = 770.000000000000000000
+  OnResized = FrameResized
+  object lTitle: TLayout
+    Align = Top
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Position.X = 10.000000000000000000
+    Position.Y = 10.000000000000000000
+    Size.Width = 1001.000000000000000000
+    Size.Height = 150.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    inline tiTitle: TOlfFMXTextImageFrame
+      Align = Center
+      HitTest = False
+      Size.Width = 320.000000000000000000
+      Size.Height = 150.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object VertScrollBox1: TVertScrollBox
+    Align = Client
+    Margins.Left = 10.000000000000000000
+    Margins.Top = 10.000000000000000000
+    Margins.Right = 10.000000000000000000
+    Margins.Bottom = 10.000000000000000000
+    Size.Width = 1001.000000000000000000
+    Size.Height = 580.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    Viewport.Width = 1001.000000000000000000
+    Viewport.Height = 580.000000000000000000
+    object FlowLayout1: TFlowLayout
+      Align = Top
+      Size.Width = 1001.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Justify = Center
+      JustifyLastLine = Center
+      FlowDirection = LeftToRight
+      inline btnNewGame: TButtonText
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 128.500000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 352.000000000000000000
+        Size.Height = 124.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnNewGameClick
+      end
+      inline btnContinue: TButtonText
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 520.500000000000000000
+        Position.Y = 20.000000000000000000
+        Size.Width = 352.000000000000000000
+        Size.Height = 124.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnContinueClick
+      end
+      inline btnOptions: TButtonText
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 128.500000000000000000
+        Position.Y = 184.000000000000000000
+        Size.Width = 352.000000000000000000
+        Size.Height = 124.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnOptionsClick
+      end
+      inline btnHallOfFame: TButtonText
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 520.500000000000000000
+        Position.Y = 184.000000000000000000
+        Size.Width = 352.000000000000000000
+        Size.Height = 124.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnHallOfFameClick
+      end
+      inline btnCredits: TButtonText
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 128.500000000000000000
+        Position.Y = 348.000000000000000000
+        Size.Width = 352.000000000000000000
+        Size.Height = 124.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnCreditsClick
+      end
+      inline btnQuit: TButtonText
+        Align = Top
+        Margins.Left = 20.000000000000000000
+        Margins.Top = 20.000000000000000000
+        Margins.Right = 20.000000000000000000
+        Margins.Bottom = 20.000000000000000000
+        Position.X = 520.500000000000000000
+        Position.Y = 348.000000000000000000
+        Size.Width = 352.000000000000000000
+        Size.Height = 124.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnQuitClick
+      end
+    end
+  end
+end
