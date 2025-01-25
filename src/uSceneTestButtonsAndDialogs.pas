@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T19:37:06.000+01:00
-/// Signature : a50975a8ef95170dcecf4f8b7a51f115f52547c5
+/// File last update : 2025-01-25T21:11:40.000+01:00
+/// Signature : 70feb98cebd2dbdf1ff6710c7a06ba3c7f47ab11
 /// ***************************************************************************
 /// </summary>
 
@@ -48,12 +48,18 @@ uses
   FMX.StdCtrls,
   _ScenesAncestor,
   _ButtonsAncestor,
-  cButtonText;
+  cButtonText,
+  cButtonIcon;
 
 type
   TSceneTestButtonsAndDialogs = class(T__SceneAncestor)
     ButtonText1: TButtonText;
     ButtonText2: TButtonText;
+    ButtonIcon1: TButtonIcon;
+    ButtonIcon2: TButtonIcon;
+    ButtonIcon3: TButtonIcon;
+    ButtonIcon4: TButtonIcon;
+    ButtonIcon5: TButtonIcon;
     procedure ButtonText1Click(Sender: TObject);
     procedure ButtonText2Click(Sender: TObject);
   private
@@ -101,6 +107,17 @@ begin
     nil, true);
   TUIItemsList.Current.AddControl(ButtonText2, ButtonText1, nil, nil, nil);
   TUIItemsList.Current.AddQuit;
+
+  ButtonIcon1.BackgroundColor := TBackgroundColor.Green;
+  ButtonIcon1.IconType := TIconType.Ok;
+  ButtonIcon2.BackgroundColor := TBackgroundColor.Red;
+  ButtonIcon2.IconType := TIconType.cancel;
+  ButtonIcon3.BackgroundColor := TBackgroundColor.Green;
+  ButtonIcon3.IconType := TIconType.Music;
+  ButtonIcon4.BackgroundColor := TBackgroundColor.Red;
+  ButtonIcon4.IconType := TIconType.Pause;
+  ButtonIcon5.BackgroundColor := TBackgroundColor.Green;
+  ButtonIcon5.IconType := TIconType.Sound;
 end;
 
 procedure TSceneTestButtonsAndDialogs.TranslateTexts(const Language: string);
