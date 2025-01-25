@@ -1,0 +1,40 @@
+inherited SceneTestButtonsAndDialogs: TSceneTestButtonsAndDialogs
+  Size.Width = 918.000000000000000000
+  Size.Height = 439.000000000000000000
+  inline ButtonText1: TButtonText
+    Position.X = 104.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 352.000000000000000000
+    Size.Height = 124.000000000000000000
+    Size.PlatformDefault = False
+    OnClick = ButtonText1Click
+    inherited rBackground: TRectangle
+      inherited lText: TLayout
+        inherited tiText: TOlfFMXTextImageFrame
+          Margins.Left = 34.000000000000000000
+          Margins.Top = 44.000000000000000000
+          Margins.Right = 40.000000000000000000
+          Margins.Bottom = 50.000000000000000000
+        end
+      end
+    end
+  end
+  inline ButtonText2: TButtonText
+    Position.X = 168.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 352.000000000000000000
+    Size.Height = 124.000000000000000000
+    Size.PlatformDefault = False
+    OnClick = ButtonText2Click
+    inherited rBackground: TRectangle
+      inherited lText: TLayout
+        inherited tiText: TOlfFMXTextImageFrame
+          Margins.Left = 34.000000000000000000
+          Margins.Top = 44.000000000000000000
+          Margins.Right = 40.000000000000000000
+          Margins.Bottom = 50.000000000000000000
+        end
+      end
+    end
+  end
+end
