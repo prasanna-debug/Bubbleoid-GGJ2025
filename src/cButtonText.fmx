@@ -3,7 +3,7 @@ inherited ButtonText: TButtonText
   Size.Height = 124.000000000000000000
   object rBackground: TRectangle
     Align = Client
-    Fill.Bitmap.WrapMode = Tile
+    Fill.Bitmap.WrapMode = TileStretch
     Fill.Kind = Bitmap
     Locked = True
     HitTest = False
@@ -13,7 +13,7 @@ inherited ButtonText: TButtonText
     Stroke.Kind = None
     object rFocused: TRectangle
       Align = Left
-      Fill.Bitmap.WrapMode = Tile
+      Fill.Bitmap.WrapMode = TileStretch
       Fill.Kind = Bitmap
       Locked = True
       HitTest = False
@@ -30,6 +30,7 @@ inherited ButtonText: TButtonText
     end
     object lText: TLayout
       Align = Contents
+      Locked = True
       Margins.Left = 34.000000000000000000
       Margins.Top = 44.000000000000000000
       Margins.Right = 34.000000000000000000
