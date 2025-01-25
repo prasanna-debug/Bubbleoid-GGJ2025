@@ -462,14 +462,14 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.icns</Icns_MainIcns>
-        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
+        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_OSXARM64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.icns</Icns_MainIcns>
-        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
+        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
         <DCC_RemoteDebug>false</DCC_RemoteDebug>
@@ -586,7 +586,7 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.icns</Icns_MainIcns>
-        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
+        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
         <DCC_GenerateOSXUniversalBinaryFile>true</DCC_GenerateOSXUniversalBinaryFile>
@@ -595,7 +595,7 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.icns</Icns_MainIcns>
-        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
+        <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
@@ -625,17 +625,17 @@
             <Form>frmMain</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialog.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialogForm.pas">
+        <DCCReference Include="..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialog.pas"/>
+        <DCCReference Include="..\lib-externes\AboutDialog-Delphi-Component\src\Olf.FMX.AboutDialogForm.pas">
             <Form>OlfAboutDialogForm</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\librairies\src\u_urlOpen.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\u_urlOpen.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uConsts.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\librairies\src\Olf.RTL.Language.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\librairies\src\Olf.RTL.CryptDecrypt.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\librairies\src\Olf.RTL.Params.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\librairies\src\Olf.Skia.SVGToBitmap.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Language.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.CryptDecrypt.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Params.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.Skia.SVGToBitmap.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uDMAboutBox.pas">
             <Form>AboutBox</Form>
             <FormType>dfm</FormType>
@@ -648,18 +648,18 @@
         </DCCReference>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uTxtAboutLicense.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uTxtAboutDescription.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.HelpBar.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.Joystick.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.GamepadDetected.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.DirectInput.Win.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.Helpers.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.Mac.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Scores.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.UIElements.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\iOSapi.GameController.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.HelpBar.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.Joystick.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.FMX.MusicLoop.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.GamepadDetected.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.DirectInput.Win.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.Helpers.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.Mac.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Joystick.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.Scores.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Gamolf.RTL.UIElements.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\iOSapi.GameController.pas"/>
+        <DCCReference Include="..\lib-externes\Delphi-Game-Engine\src\Macapi.GameController.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uTranslate.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uConfig.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\_ScenesAncestor.pas">
@@ -670,8 +670,8 @@
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uScene.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uUIElements.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uGameData.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\librairies\src\Olf.RTL.Streams.pas"/>
-        <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Streams.pas"/>
+        <DCCReference Include="..\lib-externes\librairies\src\Olf.RTL.Maths.Conversions.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uBackgroundMusic.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\uSoundEffects.pas"/>
         <DCCReference Include="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\kenney_nl\InputPrompts\USVGInputPrompts.pas"/>
