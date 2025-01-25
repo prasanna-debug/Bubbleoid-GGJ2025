@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T16:34:36.000+01:00
-/// Signature : f3011e160332aaaf6eb2e3cafe1c7acca7794ac1
+/// File last update : 2025-01-25T19:04:26.000+01:00
+/// Signature : 73de6d765e85609faa86c9cc5a2260c91326cd7b
 /// ***************************************************************************
 /// </summary>
 
@@ -68,7 +68,7 @@ const
   /// The URL where you can buy the software.
   /// (if not empty, a "Buy" button is added in the About Box)
   /// </summary>
-  CSoftwareBuyURL = caboutgameurl;
+  CSoftwareBuyURL = CAboutGameURL;
 
   /// <summary>
   /// Default language used if the system language is not supported
@@ -178,7 +178,8 @@ type
   /// Create scenes screens by inheriting from /Scenes/_SceneAncestor.pas
   /// </remarks>
   TSceneType = (None (* "None" must stay *) , Exit (* "Exit" must stay *) ,
-    Home, Game, GameOverLost, GameOverWin, Credits, Options, HallOfFame);
+    Home, Game, GameOverLost, GameOverWin, Credits, Options, HallOfFame,
+    TestButtonsAndDialogs);
 
 Const
   /// <summary>
@@ -187,8 +188,8 @@ Const
   /// <remarks>
   /// Change it to an other scene, like a game intro or a splashscreen
   /// </remarks>
-  CDefaultSceneOnStartup = TSceneType.Home;
-
+  // CDefaultSceneOnStartup = TSceneType.Home;
+  CDefaultSceneOnStartup = TSceneType.TestButtonsAndDialogs;
 {$IF Defined(RELEASE)}
 
 var
@@ -258,7 +259,6 @@ try
   // Don't share the key file. If you need to modify it, you won't be able to
   // open the previous configuration file!
 {$I '..\_PRIVATE\src\GameDataFileXORKey.inc'}
-
 {$ENDIF}
 except
   on e: Exception do
