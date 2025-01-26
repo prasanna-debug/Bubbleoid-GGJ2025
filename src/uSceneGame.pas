@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T20:06:32.000+01:00
-/// Signature : 18e4e709c29db7c2737f84ab6defe5c8c4a37435
+/// File last update : 2025-01-26T20:30:36.000+01:00
+/// Signature : 489bd6647cd1816794f6e6742c52305a33f918d1
 /// ***************************************************************************
 /// </summary>
 
@@ -120,12 +120,28 @@ end;
 procedure TSceneGame.DGEGamepadManager1AxesChange(const GamepadID: Integer;
   const Axe: TJoystickAxes; const Value: Single);
 begin
-  // TODO : à compléter
+  // TODO : à prendre en charge sous forme de boucle sans attendre l'événement de modification
+  if (Value < -0.7) or (Value > 0.7) then
+    if Axe in [TJoystickAxes.LeftStickX, TJoystickAxes.rightStickX] then
+    begin
+      if Value < 0 then
+        GoToLeft
+      else
+        GoToRight;
+    end
+    else if Axe in [TJoystickAxes.LeftSticky, TJoystickAxes.rightSticky] then
+    begin
+      if Value < 0 then
+        GoToUp
+      else
+        GoToDown;
+    end;
 end;
 
 procedure TSceneGame.DGEGamepadManager1DirectionPadChange(const GamepadID
   : Integer; const Value: TJoystickDPad);
 begin
+  // TODO : à prendre en charge sous forme de boucle sans attendre l'événement de modification
   if Value = TJoystickDPad.Top then
     GoToUp
   else if Value = TJoystickDPad.Right then
