@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T12:05:14.000+01:00
-/// Signature : 36352bda3b1be2954501b4b89eae3401d50147cd
+/// File last update : 2025-01-26T13:47:04.000+01:00
+/// Signature : 1bdb91821884664d7afbf491db92b01e6a6877aa
 /// ***************************************************************************
 /// </summary>
 
@@ -87,7 +87,8 @@ uses
   uSceneHome in 'uSceneHome.pas' {SceneHome: TFrame},
   udmAdobeStock_244522135_244522157 in '..\_PRIVATE\assets\AdobeStock\AdobeStock_244522135_244522157\BubbleFontPNG\udmAdobeStock_244522135_244522157.pas' {dmAdobeStock_244522135_244522157: TDataModule},
   cDialogBox in 'cDialogBox.pas' {DialogBox: TFrame},
-  uStarFieldData in 'uStarFieldData.pas';
+  uStarFieldData in 'uStarFieldData.pas',
+  uSceneCredits in 'uSceneCredits.pas' {SceneCredits: TFrame};
 
 {$R *.res}
 
