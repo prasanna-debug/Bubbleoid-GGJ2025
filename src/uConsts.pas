@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T19:38:56.000+01:00
-/// Signature : 06a0ad1197e57843c2061f827b28633ec1992636
+/// File last update : 2025-01-26T21:06:26.000+01:00
+/// Signature : 9884e8b878f6cf049ad16876329561c154d0f6b3
 /// ***************************************************************************
 /// </summary>
 
@@ -42,12 +42,12 @@ const
   /// Version number of your game, don't forget to update the
   /// Project/Options/Versions infos before compiling a public RELEASE
   /// </summary>
-  CAboutVersionNumber = '0.0';
+  CAboutVersionNumber = '1.0';
 
   /// <summary>
   /// Version date of your game, change it when you publish a new public release
   /// </summary>
-  CAboutVersionDate = '20250125';
+  CAboutVersionDate = '20250126';
 
   /// <summary>
   /// Title of your game used in the About box and as the main form caption
