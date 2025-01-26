@@ -37,8 +37,6 @@ interface
 function GetTxtAboutDescription(const Language: string;
   const Recursif: boolean = false): string;
 
-// TODO : compléter la description et les crédits dans le texte
-
 implementation
 
 // For the languages codes, please use 2 letters ISO codes
@@ -50,14 +48,18 @@ uses
 
 const
   CTxtEN = '''
-TODO
+Created for the Global Game Jam 2025, Bubbleoid is a short game. You have to move through a 3D field of bubbles and avoid them as your speed increases over time.
+
+You can play with a keyboard, game controller, mouse or your fingers depending on your device (computer, smartphone or tablet).
 
 *****************
 * Credits
 
 This application was developed by Patrick Prémartin in Delphi.
 
-TODO
+The images (sprites, icones and UI) are licensed by Adobe Stock.
+
+The game has been developed in Delphi. It's based on Gamolf FMX Game Starter Kit and Delphi Game Engine to handle the classic functionalities (music, sounds, parameters, scores, screen sequencing and user interface interactivity).
 
 *****************
 * Publisher info
@@ -84,14 +86,18 @@ To find out more, visit https://bubbleoid.gamolf.fr
 
 ''';
    CTxtFR = '''
-TODO
+Créé à l'occasion de la Global Game Jam 2025, Bubbleoid est un jeu à parties courtes. Vous devez vous déplacer dans un champ de bulles en 3D et les éviter alors que vostre vitesse augmente au fil du temps.
+
+Vous pouvez y jouer avec un clavier, un contrôleur de jeux, une souris ou vos doigts selon votre appareil (ordinateur, smartphone ou tablette).
 
 *****************
 * Remerciements
 
 Cette application a été développée par Patrick Prémartin en Delphi.
 
-TODO
+Les images (sprites, icones et éléments d'interface) sont sous licence Adobe Stock.
+
+Ce jeu est développé sous Delphi. Il est basé sur Gamolf FMX Game Starter Kit et Delphi Game Engine pour gérer les fonctionnalités classiques (musiques, sons, paramétres, scores, enchaînement des écrans et interctions avec l'interface utilisateur).
 
 *****************
 * Info éditeur
