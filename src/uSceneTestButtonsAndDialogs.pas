@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T22:08:22.000+01:00
-/// Signature : 5204c4d7e37743398755e7099dd7c8e276ce7e6d
+/// File last update : 2025-01-26T12:12:42.000+01:00
+/// Signature : 68fc6322c1c20244742ebf92c5bd98e2066fe11b
 /// ***************************************************************************
 /// </summary>
 
@@ -61,18 +61,16 @@ type
     ButtonIcon3: TButtonIcon;
     ButtonIcon4: TButtonIcon;
     ButtonIcon5: TButtonIcon;
-    DialogBox1: TDialogBox;
     procedure ButtonText1Click(Sender: TObject);
     procedure ButtonText2Click(Sender: TObject);
+    procedure ButtonIcon3Click(Sender: TObject);
   private
+    DialogBoxTitle, DialogBoxText: string;
   public
     procedure ShowScene; override;
     procedure HideScene; override;
     procedure TranslateTexts(const Language: string); override;
   end;
-
-var
-  SceneTestButtonsAndDialogs: TSceneTestButtonsAndDialogs;
 
 implementation
 
@@ -84,6 +82,11 @@ uses
   System.Messaging,
   uConsts,
   uUIElements;
+
+procedure TSceneTestButtonsAndDialogs.ButtonIcon3Click(Sender: TObject);
+begin
+  TDialogBox.Execute(self, DialogBoxTitle, DialogBoxText);
+end;
 
 procedure TSceneTestButtonsAndDialogs.ButtonText1Click(Sender: TObject);
 begin
@@ -129,15 +132,15 @@ begin
   begin
     ButtonText1.Text := 'En français';
     ButtonText2.Text := 'En anglais';
-    DialogBox1.Title := 'Ma Boite De Dialogue';
-    DialogBox1.Text := 'coucou c''est moi';
+    DialogBoxTitle := 'Ma Boite De Dialogue';
+    DialogBoxText := 'coucou c''est moi';
   end
   else
   begin
     ButtonText1.Text := 'In French';
     ButtonText2.Text := 'In English';
-    DialogBox1.Title := 'My Dialog Box';
-    DialogBox1.Text := 'hello it''s me';
+    DialogBoxTitle := 'My Dialog Box';
+    DialogBoxText := 'hello it''s me';
   end;
 end;
 

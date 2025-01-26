@@ -57,6 +57,7 @@ inherited SceneTestButtonsAndDialogs: TSceneTestButtonsAndDialogs
     Size.Width = 54.000000000000000000
     Size.Height = 54.000000000000000000
     Size.PlatformDefault = False
+    OnClick = ButtonIcon3Click
   end
   inline ButtonIcon4: TButtonIcon
     Position.X = 654.000000000000000000
@@ -71,15 +72,5 @@ inherited SceneTestButtonsAndDialogs: TSceneTestButtonsAndDialogs
     Size.Width = 54.000000000000000000
     Size.Height = 54.000000000000000000
     Size.PlatformDefault = False
-  end
-  inline DialogBox1: TDialogBox
-    Align = Center
-    Size.Width = 1055.000000000000000000
-    Size.Height = 696.000000000000000000
-    Size.PlatformDefault = False
-    inherited VertScrollBox1: TVertScrollBox
-      Viewport.Width = 955.000000000000000000
-      Viewport.Height = 366.000000000000000000
-    end
   end
 end
