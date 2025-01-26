@@ -386,20 +386,20 @@
         <Android_LauncherIcon96>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-96x96.png</Android_LauncherIcon96>
         <Android_LauncherIcon144>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-144x144.png</Android_LauncherIcon144>
         <Android_LauncherIcon192>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashImage426>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
         <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
-        <Android_NotificationIcon24>..\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>..\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon24>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_Android64)'!=''">
@@ -411,20 +411,20 @@
         <Android_LauncherIcon96>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-96x96.png</Android_LauncherIcon96>
         <Android_LauncherIcon144>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-144x144.png</Android_LauncherIcon144>
         <Android_LauncherIcon192>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
+        <Android_SplashImage426>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
         <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
-        <Android_NotificationIcon24>..\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
-        <Android_NotificationIcon36>..\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon24>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-96x96.png</Android_NotificationIcon96>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_1_iOSDevice64)'!=''">
@@ -479,8 +479,8 @@
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
         <VerInfo_Build>19</VerInfo_Build>
         <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.19;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=gamolf.fmxgametemplate.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0;Comments=</VerInfo_Keys>
     </PropertyGroup>
@@ -491,8 +491,8 @@
         <VerInfo_Locale>1033</VerInfo_Locale>
         <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.ico</Icon_MainIcon>
         <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
+        <UWP_DelphiLogo44>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-150x150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2)'!=''">
         <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
@@ -506,24 +506,24 @@
         <Android_BackgroundColor>#FFFFFF</Android_BackgroundColor>
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
-        <Android_LauncherIcon36>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-144x144.png</Android_LauncherIcon144>
-        <Android_LauncherIcon192>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage426>..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
-        <Android_SplashImage470>..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
+        <Android_LauncherIcon36>..\assets\icons\bubbleoid-36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>..\assets\icons\bubbleoid-48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>..\assets\icons\bubbleoid-72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>..\assets\icons\bubbleoid-96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>..\assets\icons\bubbleoid-144x144.png</Android_LauncherIcon144>
+        <Android_LauncherIcon192>..\assets\icons\bubbleoid-192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage426>..\assets\icons\bubbleoid-426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>..\assets\icons\bubbleoid-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\assets\icons\bubbleoid-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\assets\icons\bubbleoid-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
-        <Android_NotificationIcon24>..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon24>..\assets\icons\bubbleoid-24x24.png</Android_NotificationIcon24>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
-        <Android_NotificationIcon36>..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon36>..\assets\icons\bubbleoid-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\assets\icons\bubbleoid-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\assets\icons\bubbleoid-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\assets\icons\bubbleoid-96x96.png</Android_NotificationIcon96>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
         <DCC_GenerateAndroidAppBundleFile>true</DCC_GenerateAndroidAppBundleFile>
@@ -532,50 +532,50 @@
         <Android_DarkBackgroundColor>#000000</Android_DarkBackgroundColor>
         <IncludeAndroid_NotificationAccentColor>false</IncludeAndroid_NotificationAccentColor>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Android_LauncherIcon36>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-36x36.png</Android_LauncherIcon36>
-        <Android_LauncherIcon48>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-48x48.png</Android_LauncherIcon48>
-        <Android_LauncherIcon72>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-72x72.png</Android_LauncherIcon72>
-        <Android_LauncherIcon96>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-96x96.png</Android_LauncherIcon96>
-        <Android_LauncherIcon144>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-144x144.png</Android_LauncherIcon144>
-        <Android_SplashImage426>..\assets\icons\gameicon-426x320.png</Android_SplashImage426>
-        <Android_LauncherIcon192>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-192x192.png</Android_LauncherIcon192>
-        <Android_SplashImage470>..\assets\icons\gameicon-470x320.png</Android_SplashImage470>
-        <Android_SplashImage640>..\assets\icons\gameicon-640x480.png</Android_SplashImage640>
-        <Android_SplashImage960>..\assets\icons\gameicon-960x720.png</Android_SplashImage960>
+        <Android_LauncherIcon36>..\assets\icons\bubbleoid-36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>..\assets\icons\bubbleoid-48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>..\assets\icons\bubbleoid-72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>..\assets\icons\bubbleoid-96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>..\assets\icons\bubbleoid-144x144.png</Android_LauncherIcon144>
+        <Android_SplashImage426>..\assets\icons\bubbleoid-426x320.png</Android_SplashImage426>
+        <Android_LauncherIcon192>..\assets\icons\bubbleoid-192x192.png</Android_LauncherIcon192>
+        <Android_SplashImage470>..\assets\icons\bubbleoid-470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>..\assets\icons\bubbleoid-640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>..\assets\icons\bubbleoid-960x720.png</Android_SplashImage960>
         <Android_SplashTileMode>disabled</Android_SplashTileMode>
         <Android_SplashGravity>center</Android_SplashGravity>
-        <Android_NotificationIcon24>..\assets\icons\gameicon-24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon24>..\assets\icons\bubbleoid-24x24.png</Android_NotificationIcon24>
         <IncludeAndroid_Splash>false</IncludeAndroid_Splash>
-        <Android_NotificationIcon36>..\assets\icons\gameicon-36x36.png</Android_NotificationIcon36>
-        <Android_NotificationIcon48>..\assets\icons\gameicon-48x48.png</Android_NotificationIcon48>
-        <Android_NotificationIcon72>..\assets\icons\gameicon-72x72.png</Android_NotificationIcon72>
-        <Android_NotificationIcon96>..\assets\icons\gameicon-96x96.png</Android_NotificationIcon96>
+        <Android_NotificationIcon36>..\assets\icons\bubbleoid-36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>..\assets\icons\bubbleoid-48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>..\assets\icons\bubbleoid-72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>..\assets\icons\bubbleoid-96x96.png</Android_NotificationIcon96>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_UIDeviceFamily>iPhoneAndiPad</VerInfo_UIDeviceFamily>
         <VerInfo_BundleId>gamolf.fmxgametemplate.$(ModuleName)</VerInfo_BundleId>
-        <iPhone_AppIcon120>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-120x120.png</iPhone_AppIcon120>
-        <iPhone_AppIcon180>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-180x180.png</iPhone_AppIcon180>
-        <iOS_AppStore1024>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-1024x1024.png</iOS_AppStore1024>
-        <iPhone_Spotlight80>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-80x80.png</iPhone_Spotlight80>
-        <iPhone_Spotlight120>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-120x120.png</iPhone_Spotlight120>
-        <iPhone_Setting58>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-58x58.png</iPhone_Setting58>
-        <iPhone_Setting87>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-87x87.png</iPhone_Setting87>
-        <iPhone_Notification40>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-40x40.png</iPhone_Notification40>
-        <iPhone_Notification60>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-60x60.png</iPhone_Notification60>
-        <iPhone_Launch2x>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-256x256.png</iPhone_Launch2x>
-        <iPhone_LaunchDark2x>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-256x256.png</iPhone_LaunchDark2x>
-        <iPhone_Launch3x>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-512x512.png</iPhone_Launch3x>
-        <iPhone_LaunchDark3x>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-512x512.png</iPhone_LaunchDark3x>
-        <iPad_AppIcon152>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-152x152.png</iPad_AppIcon152>
-        <iPad_AppIcon167>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-167x167.png</iPad_AppIcon167>
-        <iPad_SpotLight80>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-80x80.png</iPad_SpotLight80>
-        <iPad_Setting58>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-58x58.png</iPad_Setting58>
-        <iPad_Notification40>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-40x40.png</iPad_Notification40>
-        <iPad_Launch2x>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-512x512.png</iPad_Launch2x>
-        <iPad_LaunchDark2x>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon-512x512.png</iPad_LaunchDark2x>
+        <iPhone_AppIcon120>..\assets\icons\bubbleoid-120x120.png</iPhone_AppIcon120>
+        <iPhone_AppIcon180>..\assets\icons\bubbleoid-180x180.png</iPhone_AppIcon180>
+        <iOS_AppStore1024>..\assets\icons\bubbleoid-1024x1024.png</iOS_AppStore1024>
+        <iPhone_Spotlight80>..\assets\icons\bubbleoid-80x80.png</iPhone_Spotlight80>
+        <iPhone_Spotlight120>..\assets\icons\bubbleoid-120x120.png</iPhone_Spotlight120>
+        <iPhone_Setting58>..\assets\icons\bubbleoid-58x58.png</iPhone_Setting58>
+        <iPhone_Setting87>..\assets\icons\bubbleoid-87x87.png</iPhone_Setting87>
+        <iPhone_Notification40>..\assets\icons\bubbleoid-40x40.png</iPhone_Notification40>
+        <iPhone_Notification60>..\assets\icons\bubbleoid-60x60.png</iPhone_Notification60>
+        <iPhone_Launch2x>..\assets\icons\bubbleoid-256x256.png</iPhone_Launch2x>
+        <iPhone_LaunchDark2x>..\assets\icons\bubbleoid-256x256.png</iPhone_LaunchDark2x>
+        <iPhone_Launch3x>..\assets\icons\bubbleoid-512x512.png</iPhone_Launch3x>
+        <iPhone_LaunchDark3x>..\assets\icons\bubbleoid-512x512.png</iPhone_LaunchDark3x>
+        <iPad_AppIcon152>..\assets\icons\bubbleoid-152x152.png</iPad_AppIcon152>
+        <iPad_AppIcon167>..\assets\icons\bubbleoid-167x167.png</iPad_AppIcon167>
+        <iPad_SpotLight80>..\assets\icons\bubbleoid-80x80.png</iPad_SpotLight80>
+        <iPad_Setting58>..\assets\icons\bubbleoid-58x58.png</iPad_Setting58>
+        <iPad_Notification40>..\assets\icons\bubbleoid-40x40.png</iPad_Notification40>
+        <iPad_Launch2x>..\assets\icons\bubbleoid-512x512.png</iPad_Launch2x>
+        <iPad_LaunchDark2x>..\assets\icons\bubbleoid-512x512.png</iPad_LaunchDark2x>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_iOSSimARM64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
@@ -584,8 +584,8 @@
     <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\bubbleoid.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\bubbleoid.icns</Icns_MainIcns>
         <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_OSXARM64)'!=''">
@@ -593,8 +593,8 @@
         <Debugger_Launcher>/usr/X11/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
-        <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.icns</Icns_MainIcns>
+        <Icon_MainIcon>..\assets\icons\bubbleoid.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\bubbleoid.icns</Icns_MainIcns>
         <Manifest_File>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\src\(vide)</Manifest_File>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
@@ -602,20 +602,20 @@
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
+        <Icon_MainIcon>..\assets\icons\bubbleoid.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\bubbleoid.icns</Icns_MainIcns>
+        <UWP_DelphiLogo44>..\assets\icons\bubbleoid-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\bubbleoid-150x150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <PropertyGroup Condition="'$(Cfg_2_Win64)'!=''">
         <AppDPIAwarenessMode>PerMonitorV2</AppDPIAwarenessMode>
         <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
         <VerInfo_AutoIncVersion>true</VerInfo_AutoIncVersion>
         <VerInfo_Locale>1033</VerInfo_Locale>
-        <Icon_MainIcon>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.ico</Icon_MainIcon>
-        <Icns_MainIcns>..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\gameicon.icns</Icns_MainIcns>
-        <UWP_DelphiLogo44>..\assets\icons\gameicon-44x44.png</UWP_DelphiLogo44>
-        <UWP_DelphiLogo150>..\assets\icons\gameicon-150x150.png</UWP_DelphiLogo150>
+        <Icon_MainIcon>..\assets\icons\bubbleoid.ico</Icon_MainIcon>
+        <Icns_MainIcns>..\assets\icons\bubbleoid.icns</Icns_MainIcns>
+        <UWP_DelphiLogo44>..\assets\icons\bubbleoid-44x44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>..\assets\icons\bubbleoid-150x150.png</UWP_DelphiLogo150>
     </PropertyGroup>
     <ItemGroup>
         <DelphiCompile Include="$(MainSource)">
@@ -845,11 +845,11 @@
                         <Overwrite>true</Overwrite>
                     </Platform>
                 </DeployFile>
-                <DeployFile LocalName="..\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
-                <DeployFile LocalName="..\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
-                <DeployFile LocalName="..\assets\icons\debuggameicon.icns" Configuration="Debug" Class="ProjectOSXResource"/>
-                <DeployFile LocalName="..\assets\icons\gameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
-                <DeployFile LocalName="..\assets\icons\gameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
+                <DeployFile LocalName="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
+                <DeployFile LocalName="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
+                <DeployFile LocalName="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.icns" Configuration="Debug" Class="ProjectOSXResource"/>
+                <DeployFile LocalName="..\assets\icons\bubbleoid-150x150.png" Configuration="Debug" Class="UWP_DelphiLogo150"/>
+                <DeployFile LocalName="..\assets\icons\bubbleoid-44x44.png" Configuration="Debug" Class="UWP_DelphiLogo44"/>
                 <DeployFile LocalName="..\lib-externes\Gamolf-FMX-Game-Starter-Kit\assets\icons\debuggameicon.icns" Configuration="Debug" Class="ProjectOSXResource">
                     <Platform Name="OSXARM64">
                         <RemoteName>Bubbleoid.icns</RemoteName>
