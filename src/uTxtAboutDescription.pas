@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T14:46:28.000+01:00
-/// Signature : 910be360631e4ab704689e77628e8797002b9166
+/// File last update : 2025-01-26T16:17:26.000+01:00
+/// Signature : eb86bbb76ed219873e3a482af872754ab8dab153
 /// ***************************************************************************
 /// </summary>
 
@@ -80,7 +80,7 @@ We use no cookies, no tracking, no stats on your use of the application.
 ***************
 * User support
 
-If you have any questions or require additional functionality, please leave us a message on the application''s website or on its code repository.
+If you have any questions or require additional functionality, please leave us a message on the application's website or on its code repository.
 
 To find out more, visit https://bubbleoid.gamolf.fr
 
