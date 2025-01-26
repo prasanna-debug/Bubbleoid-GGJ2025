@@ -4,7 +4,7 @@
 
 Créé à l'occasion de la [Global Game Jam 2025](https://globalgamejam.org), [Bubbleoid](https://bubbleoid.gamolf.fr) est un jeu à parties courtes. Vous devez vous déplacer dans un champ de bulles en 3D et les éviter alors que vostre vitesse augmente au fil du temps.
 
-Vous pouvez y jouer avec un clavier, un contrôleur de jeux ou une souris.
+Vous pouvez jouer avec un clavier, une manette de jeu, vos doigts ou une souris en fonction de votre appareil (ordinateur, smartphone ou tablette).
 
 Ce jeu est développé sous Delphi. Il est basé sur [Gamolf FMX Game Starter Kit](https://fmxgamestarterkit.developpeur-pascal.fr/) et [Delphi Game Engine](https://delphigameengine.developpeur-pascal.fr/) pour gérer les fonctionnalités classiques (musiques, sons, paramétres, scores, enchaînement des écrans et interctions avec l'interface utilisateur).
 
