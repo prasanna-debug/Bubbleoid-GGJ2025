@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T12:58:46.000+01:00
-/// Signature : a78a71947b5a7405e3812bc8892be7022b0847b2
+/// File last update : 2025-01-26T13:15:48.000+01:00
+/// Signature : 39fcd7c8bbf2427927ae6e1312017466c6a3dbeb
 /// ***************************************************************************
 /// </summary>
 
@@ -126,25 +126,28 @@ procedure TDialogBox.FrameResized(Sender: TObject);
 const
   CBorderMargins = 30;
 var
-  ratio: single;
+  w, h, ratio: single;
 begin
-  if (lDialogBox.OriginalWidth < Width - 2 * CBorderMargins) or
-    (lDialogBox.OriginalHeight < Height - 2 * CBorderMargins) then
-  begin
-    lDialogBox.Width := lDialogBox.OriginalWidth;
-    lDialogBox.Height := lDialogBox.OriginalHeight;
-  end;
-  if (lDialogBox.Width > Width - 2 * CBorderMargins) then
+  w := lDialogBox.OriginalWidth;
+  h := lDialogBox.OriginalHeight;
+  if (w > Width - 2 * CBorderMargins) then
   begin
     ratio := lDialogBox.OriginalWidth / (Width - 2 * CBorderMargins);
-    lDialogBox.Width := lDialogBox.OriginalWidth / ratio;
-    lDialogBox.Height := lDialogBox.OriginalHeight / ratio;
+    w := lDialogBox.OriginalWidth / ratio;
+    h := lDialogBox.OriginalHeight / ratio;
   end;
-  if lDialogBox.Height > Height - 2 * CBorderMargins then
+  if h > Height - 2 * CBorderMargins then
   begin
     ratio := lDialogBox.OriginalHeight / (Height - 2 * CBorderMargins);
-    lDialogBox.Width := lDialogBox.OriginalWidth / ratio;
-    lDialogBox.Height := lDialogBox.OriginalHeight / ratio;
+    w := lDialogBox.OriginalWidth / ratio;
+    h := lDialogBox.OriginalHeight / ratio;
+  end;
+  lDialogBox.BeginUpdate;
+  try
+    lDialogBox.Width := w;
+    lDialogBox.Height := h;
+  finally
+    lDialogBox.EndUpdate;
   end;
 end;
 
