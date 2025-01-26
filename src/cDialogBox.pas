@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T13:15:48.000+01:00
-/// Signature : 39fcd7c8bbf2427927ae6e1312017466c6a3dbeb
+/// File last update : 2025-01-26T14:01:56.000+01:00
+/// Signature : 48eb3fdb0eb3fe023c0c8d2c93614a8b8fb24c26
 /// ***************************************************************************
 /// </summary>
 
@@ -51,7 +51,8 @@ uses
   FMX.Layouts,
   Olf.FMX.TextImageFrame,
   _ButtonsAncestor,
-  cButtonText;
+  cButtonText,
+  uConsts;
 
 type
   TDialogBox = class(T__SceneAncestor)
@@ -69,10 +70,12 @@ type
     procedure btnBackClick(Sender: TObject);
     procedure FrameResized(Sender: TObject);
   private
+    FBackScene: TSceneType;
     function GetText: string;
     function GetTitle: string;
     procedure SetText(const Value: string);
     procedure SetTitle(const Value: string);
+    procedure SetBackScene(const Value: TSceneType);
   protected
     function GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
       AChar: char): integer;
@@ -80,8 +83,10 @@ type
   public
     property Title: string read GetTitle write SetTitle;
     property Text: string read GetText write SetText;
+    property BackScene: TSceneType read FBackScene write SetBackScene;
     class procedure Execute(const AParent: TFMXObject;
-      const ATitle, AText: string);
+      const ATitle, AText: string;
+      const ABackScene: TSceneType = TSceneType.None);
     procedure ShowScene; override;
     procedure HideScene; override;
     procedure TranslateTexts(const Language: string); override;
@@ -95,7 +100,8 @@ implementation
 uses
   uUIElements,
   udmAdobeStock_497062500,
-  uConfig;
+  uConfig,
+  uScene;
 
 { TDialogBox }
 
@@ -108,10 +114,12 @@ end;
 procedure TDialogBox.btnBackClick(Sender: TObject);
 begin
   HideScene;
+  if FBackScene <> TSceneType.None then
+    TScene.Current := FBackScene;
 end;
 
 class procedure TDialogBox.Execute(const AParent: TFMXObject;
-  const ATitle, AText: string);
+  const ATitle, AText: string; const ABackScene: TSceneType);
 var
   db: TDialogBox;
 begin
@@ -119,6 +127,7 @@ begin
   db.parent := AParent;
   db.Title := ATitle;
   db.Text := AText;
+  db.BackScene := ABackScene;
   db.ShowScene;
 end;
 
@@ -184,6 +193,11 @@ begin
     tiTitle.Text := tiTitle.Text;
     // TODO : replace by RefreshText or remove if TextImageFrame refresh itself when its height change
   end;
+end;
+
+procedure TDialogBox.SetBackScene(const Value: TSceneType);
+begin
+  FBackScene := Value;
 end;
 
 procedure TDialogBox.SetText(const Value: string);
