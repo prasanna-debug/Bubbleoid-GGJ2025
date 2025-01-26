@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T16:24:50.000+01:00
-/// Signature : 61329b0f82436453dc8282f55064591ccffa740e
+/// File last update : 2025-01-26T19:38:56.000+01:00
+/// Signature : 06a0ad1197e57843c2061f827b28633ec1992636
 /// ***************************************************************************
 /// </summary>
 
@@ -198,9 +198,16 @@ var
 {$ENDIF}
 
 const
-  CNbBubbles = 500;
-  CFieldSize = CNbBubbles * 3;
-  CFPS = 30;
+  CNbBubbles = 100;
+  CFieldSize = CNbBubbles * 10;
+  CFPS = 60;
+  CCircleDiameter = 128;
+  CCircleRadius = CCircleDiameter / 2;
+  CPalierScorePourVie = CNbBubbles div 3;
+
+var
+  // TODO : transférer les variables dans un TGameData personnalisé
+  SpeedX, SpeedY, SpeedZ: Single;
 
 implementation
 
