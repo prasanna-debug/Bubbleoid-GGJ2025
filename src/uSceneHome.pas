@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T22:55:22.000+01:00
-/// Signature : b69e26adbb9979e6e9936112a9c473ffddef9f37
+/// File last update : 2025-01-26T13:44:26.000+01:00
+/// Signature : 0f1d2d6c51b1a4ac6abe7ab1f2532c74e12425f0
 /// ***************************************************************************
 /// </summary>
 
@@ -62,7 +62,7 @@ type
     btnHallOfFame: TButtonText;
     btnCredits: TButtonText;
     VertScrollBox1: TVertScrollBox;
-    FlowLayout1: TFlowLayout;
+    MenuFlowLayout: TFlowLayout;
     btnQuit: TButtonText;
     procedure FrameResized(Sender: TObject);
     procedure btnQuitClick(Sender: TObject);
@@ -75,6 +75,7 @@ type
   protected
     function GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
       AChar: char): integer;
+    procedure ResizeMenuFlowLayout;
   public
     procedure HideScene; override;
     procedure ShowScene; override;
@@ -91,38 +92,36 @@ uses
   System.Messaging,
   uConsts,
   uUIElements,
-  udmAdobeStock_244522135_244522157;
+  udmAdobeStock_244522135_244522157,
+  uGameData;
 
 { TSceneHome }
 
 procedure TSceneHome.btnContinueClick(Sender: TObject);
 begin
-  // TODO : à compléter
-  // TScene.Current:=TSceneType.Game;
+  TGameData.DefaultGameData.ContinueGame;
+  TScene.Current := TSceneType.Game;
 end;
 
 procedure TSceneHome.btnCreditsClick(Sender: TObject);
 begin
-  // TODO : à compléter
-  // TScene.Current:=TSceneType.Game;
+  TScene.Current := TSceneType.Credits;
 end;
 
 procedure TSceneHome.btnHallOfFameClick(Sender: TObject);
 begin
-  // TODO : à compléter
-  // TScene.Current:=TSceneType.Game;
+  TScene.Current := TSceneType.HallOfFame;
 end;
 
 procedure TSceneHome.btnNewGameClick(Sender: TObject);
 begin
-  // TODO : à compléter
-  // TScene.Current:=TSceneType.Game;
+  TGameData.DefaultGameData.StartANewGame;
+  TScene.Current := TSceneType.Game;
 end;
 
 procedure TSceneHome.btnOptionsClick(Sender: TObject);
 begin
-  // TODO : à compléter
-  // TScene.Current:=TSceneType.Game;
+  TScene.Current := TSceneType.Options;
 end;
 
 procedure TSceneHome.btnQuitClick(Sender: TObject);
@@ -132,7 +131,7 @@ end;
 
 procedure TSceneHome.FrameResized(Sender: TObject);
 begin
-  // TODO : recalculer hauteur du TFlowLayout contenant les boutons (soit les parcourrir tous, soit regarder le dernier)
+  ResizeMenuFlowLayout;
 end;
 
 function TSceneHome.GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
@@ -147,6 +146,21 @@ begin
   TUIItemsList.Current.RemoveLayout;
 end;
 
+procedure TSceneHome.ResizeMenuFlowLayout;
+var
+  y: single;
+  i: integer;
+begin
+  y := 0;
+  for i := 0 to MenuFlowLayout.ControlsCount - 1 do
+    if MenuFlowLayout.Controls[i].Visible and
+      (MenuFlowLayout.Controls[i].Position.y + MenuFlowLayout.Controls[i].Height
+      + MenuFlowLayout.Controls[i].margins.Bottom > y) then
+      y := MenuFlowLayout.Controls[i].Position.y + MenuFlowLayout.Controls[i]
+        .Height + MenuFlowLayout.Controls[i].margins.Bottom;
+  MenuFlowLayout.Height := y;
+end;
+
 procedure TSceneHome.ShowScene;
 begin
   inherited;
@@ -156,14 +170,25 @@ begin
   btnContinue.Visible := false;
   btnOptions.Visible := false;
   btnHallOfFame.Visible := false;
-  TUIItemsList.Current.AddControl(btnCredits, btnNewGame, btnQuit, btnQuit,
-    btnNewGame);
-  TUIItemsList.Current.AddControl(btnQuit, btnCredits, nil, nil, btnCredits,
-    false, true);
+{$IF Defined(IOS) or Defined(ANDROID)}
+  btnQuit.Visible := false;
+{$ENDIF}
+  if btnQuit.Visible then
+  begin
+    TUIItemsList.Current.AddControl(btnCredits, btnNewGame, btnQuit, btnQuit,
+      btnNewGame);
+    TUIItemsList.Current.AddControl(btnQuit, btnCredits, nil, nil, btnCredits,
+      false, true);
+  end
+  else
+    TUIItemsList.Current.AddControl(btnCredits, btnNewGame, nil, nil,
+      btnNewGame);
 
   tiTitle.font := dmAdobeStock_244522135_244522157.ImageList;
   tiTitle.OnGetImageIndexOfUnknowChar := GetImageIndexOfUnknowChar;
   tiTitle.Text := CAboutGameTitle;
+
+  ResizeMenuFlowLayout;
 end;
 
 procedure TSceneHome.TranslateTexts(const Language: string);

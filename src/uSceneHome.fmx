@@ -34,7 +34,7 @@ inherited SceneHome: TSceneHome
     TabOrder = 1
     Viewport.Width = 1001.000000000000000000
     Viewport.Height = 580.000000000000000000
-    object FlowLayout1: TFlowLayout
+    object MenuFlowLayout: TFlowLayout
       Align = Top
       Size.Width = 1001.000000000000000000
       Size.Height = 50.000000000000000000
