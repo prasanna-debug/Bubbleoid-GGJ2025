@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{ABB7EBBE-9586-42E2-B1AC-2923387A16BC}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="src\Bubbleoid.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="src-tests\BubbleoidTests.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Bubbleoid">
+        <MSBuild Projects="src\Bubbleoid.dproj"/>
+    </Target>
+    <Target Name="Bubbleoid:Clean">
+        <MSBuild Projects="src\Bubbleoid.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Bubbleoid:Make">
+        <MSBuild Projects="src\Bubbleoid.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="BubbleoidTests">
+        <MSBuild Projects="src-tests\BubbleoidTests.dproj"/>
+    </Target>
+    <Target Name="BubbleoidTests:Clean">
+        <MSBuild Projects="src-tests\BubbleoidTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="BubbleoidTests:Make">
+        <MSBuild Projects="src-tests\BubbleoidTests.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Bubbleoid;BubbleoidTests"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Bubbleoid:Clean;BubbleoidTests:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Bubbleoid:Make;BubbleoidTests:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
