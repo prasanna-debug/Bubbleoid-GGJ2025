@@ -1,0 +1,4 @@
+inherited SceneGameOverLost: TSceneGameOverLost
+  Size.Width = 1035.000000000000000000
+  Size.Height = 598.000000000000000000
+end
