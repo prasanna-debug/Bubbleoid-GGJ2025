@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T22:16:28.000+01:00
-/// Signature : 3a77a4483e826a419619b0c5707797e54efd07da
+/// File last update : 2025-01-26T12:58:46.000+01:00
+/// Signature : a78a71947b5a7405e3812bc8892be7022b0847b2
 /// ***************************************************************************
 /// </summary>
 
@@ -46,78 +46,106 @@ uses
   FMX.Forms,
   FMX.Dialogs,
   FMX.StdCtrls,
-  Olf.FMX.TextImageFrame,
-  FMX.Layouts,
+  _ScenesAncestor,
   FMX.Objects,
+  FMX.Layouts,
+  Olf.FMX.TextImageFrame,
   _ButtonsAncestor,
-  cButtonIcon,
   cButtonText;
 
 type
-  TDialogBox = class(TFrame)
-    rHeader: TRectangle;
+  TDialogBox = class(T__SceneAncestor)
     rBody: TRectangle;
     rFooter: TRectangle;
-    VertScrollBox1: TVertScrollBox;
-    tiTitle: TOlfFMXTextImageFrame;
-    Layout1: TLayout;
     Layout2: TLayout;
     btnBack: TButtonText;
+    rHeader: TRectangle;
+    lTitle: TLayout;
+    tiTitle: TOlfFMXTextImageFrame;
+    VertScrollBox1: TVertScrollBox;
     tContent: TText;
+    lModalLock: TLayout;
+    lDialogBox: TScaledLayout;
+    procedure btnBackClick(Sender: TObject);
+    procedure FrameResized(Sender: TObject);
   private
-    procedure SetText(const Value: string);
-    procedure SetTitle(const Value: string);
     function GetText: string;
     function GetTitle: string;
+    procedure SetText(const Value: string);
+    procedure SetTitle(const Value: string);
   protected
     function GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
       AChar: char): integer;
+    procedure ResizeTitle;
   public
-    procedure AfterConstruction; override;
     property Title: string read GetTitle write SetTitle;
     property Text: string read GetText write SetText;
-    class procedure Execute(const AOwner: TComponent;
+    class procedure Execute(const AParent: TFMXObject;
       const ATitle, AText: string);
+    procedure ShowScene; override;
+    procedure HideScene; override;
+    procedure TranslateTexts(const Language: string); override;
+    procedure AfterConstruction; override;
   end;
-
-  // TODO : adapter taille de la boite de dialogue à son conteneur pour éviter de déborder en largeur ou hauteur
-  // TODO : intercepter les changements d'orientation sur smartphones et tablettes
-  // TODO : référencer le bouton BACK
-  // TODO : prendre en charge la traduction
-  // TODO : s'assurer que le titre ne déborde pas de la largeur de son conteneur
 
 implementation
 
 {$R *.fmx}
 
 uses
-  udmAdobeStock_497062500,
   uUIElements,
+  udmAdobeStock_497062500,
   uConfig;
+
 { TDialogBox }
 
 procedure TDialogBox.AfterConstruction;
 begin
   inherited;
-  tiTitle.Font := dmAdobeStock_497062500.ImageList;
-  tiTitle.OnGetImageIndexOfUnknowChar := GetImageIndexOfUnknowChar;
-  tiTitle.Text := '';
-  TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
-  // TODO : traduction à adapter plus tard
-  if tconfig.Current.Language = 'fr' then
-    btnBack.Text := 'Retour'
-  else
-    btnBack.Text := 'Back';
+  tContent.TextSettings.Font.Size := tContent.TextSettings.Font.Size * 2;
 end;
 
-class procedure TDialogBox.Execute(const AOwner: TComponent;
+procedure TDialogBox.btnBackClick(Sender: TObject);
+begin
+  HideScene;
+end;
+
+class procedure TDialogBox.Execute(const AParent: TFMXObject;
   const ATitle, AText: string);
 var
   db: TDialogBox;
 begin
-  db := TDialogBox.create(AOwner);
+  db := TDialogBox.create(AParent);
+  db.parent := AParent;
   db.Title := ATitle;
   db.Text := AText;
+  db.ShowScene;
+end;
+
+procedure TDialogBox.FrameResized(Sender: TObject);
+const
+  CBorderMargins = 30;
+var
+  ratio: single;
+begin
+  if (lDialogBox.OriginalWidth < Width - 2 * CBorderMargins) or
+    (lDialogBox.OriginalHeight < Height - 2 * CBorderMargins) then
+  begin
+    lDialogBox.Width := lDialogBox.OriginalWidth;
+    lDialogBox.Height := lDialogBox.OriginalHeight;
+  end;
+  if (lDialogBox.Width > Width - 2 * CBorderMargins) then
+  begin
+    ratio := lDialogBox.OriginalWidth / (Width - 2 * CBorderMargins);
+    lDialogBox.Width := lDialogBox.OriginalWidth / ratio;
+    lDialogBox.Height := lDialogBox.OriginalHeight / ratio;
+  end;
+  if lDialogBox.Height > Height - 2 * CBorderMargins then
+  begin
+    ratio := lDialogBox.OriginalHeight / (Height - 2 * CBorderMargins);
+    lDialogBox.Width := lDialogBox.OriginalWidth / ratio;
+    lDialogBox.Height := lDialogBox.OriginalHeight / ratio;
+  end;
 end;
 
 function TDialogBox.GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
@@ -139,6 +167,22 @@ begin
   result := tiTitle.Text;
 end;
 
+procedure TDialogBox.HideScene;
+begin
+  inherited;
+  TUIItemsList.Current.RemoveLayout;
+end;
+
+procedure TDialogBox.ResizeTitle;
+begin
+  while (tiTitle.Width > lTitle.Width) do
+  begin
+    tiTitle.Height := tiTitle.Height - 3;
+    tiTitle.Text := tiTitle.Text;
+    // TODO : replace by RefreshText or remove if TextImageFrame refresh itself when its height change
+  end;
+end;
+
 procedure TDialogBox.SetText(const Value: string);
 begin
   tContent.Text := Value;
@@ -147,6 +191,26 @@ end;
 procedure TDialogBox.SetTitle(const Value: string);
 begin
   tiTitle.Text := Value;
+end;
+
+procedure TDialogBox.ShowScene;
+begin
+  inherited;
+  tiTitle.OnGetImageIndexOfUnknowChar := GetImageIndexOfUnknowChar;
+  tiTitle.Font := dmAdobeStock_497062500.ImageList;
+  ResizeTitle;
+
+  TUIItemsList.Current.NewLayout;
+  TUIItemsList.Current.AddControl(btnBack, nil, nil, nil, nil, true, true);
+end;
+
+procedure TDialogBox.TranslateTexts(const Language: string);
+begin
+  inherited;
+  if tconfig.Current.Language = 'fr' then
+    btnBack.Text := 'Retour'
+  else
+    btnBack.Text := 'Back';
 end;
 
 end.
