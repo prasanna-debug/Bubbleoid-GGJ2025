@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T16:53:24.000+01:00
-/// Signature : e10e91ff3fa61ff133372814282e1714c957c3ee
+/// File last update : 2025-01-26T16:40:04.000+01:00
+/// Signature : 6e33fee54536047f86e1ddce399e4de1e6014b31
 /// ***************************************************************************
 /// </summary>
 
@@ -34,9 +34,6 @@ unit uDMAboutBoxLogoStorrage;
 
 interface
 
-// TODO : Save uDMAboutBoxLogoStorrage.pas in your game folder and to customize it in your game. Don't change the template version if you want to be able to update it.
-
-// TODO : when you'll have a logo or icon for your game, don't forget to replace default one by yours in the TImageList
 uses
   System.SysUtils,
   System.Classes,
