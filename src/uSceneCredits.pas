@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T14:10:50.000+01:00
-/// Signature : e0dda6470a3d399806650098a342d19af5171b54
+/// File last update : 2025-01-26T16:18:44.000+01:00
+/// Signature : a63050cb16fec010b536bd201954279826246f01
 /// ***************************************************************************
 /// </summary>
 
@@ -71,9 +71,16 @@ uses
 { TSceneCredits }
 
 procedure TSceneCredits.ShowScene;
+var
+  Title: string;
 begin
   inherited;
-  TDialogBox.Execute(self, CAboutGameTitle,
+  if tconfig.Current.Language = 'fr' then
+    Title := 'Crédits du jeu'
+  else
+    Title := 'Game credits';
+
+  TDialogBox.Execute(self, Title,
     GetTxtAboutDescription(tconfig.Current.Language).trim + sLineBreak +
     sLineBreak + '**********' + sLineBreak + '* License' + sLineBreak +
     sLineBreak + GetTxtAboutLicense(tconfig.Current.Language).trim + sLineBreak
