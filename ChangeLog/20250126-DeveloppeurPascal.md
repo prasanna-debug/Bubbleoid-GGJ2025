@@ -12,13 +12,15 @@
 * ajout du référencement des SVG des bulles provenant de Adobe Stock sur le projet
 * basculement du champ de bulles du projet de test vers le jeu en scène de background (pour être affiché partout)
 * optimisation du fonctionnement pour conserver des temps de réponse et une fluidité de l'affichage par rapport à ce qu'on avait dans le test qui speedait beaucoup plus
-
-
-
-- implémenter le mode jeu sur le background si une partie est en cours
-- définir les bonus / malus pour les scores
-- activer les contrôles au joystick, à la souris et au clavier
-
-- vérifier la jouabilité sur Windows, Mac, iOS et Android
-
-- soumettre le jeu à la Global Game Jam et le déployer sur les magasins d'applications habituels
+* création de l'écran de jeu
+* ajout du fonctionnement de base (changement du nombre de vies et du score) sur la scène de background au niveau du calcul de collisions
+* ajout de l'affichage du score sur l'écran de jeu
+* ajout de l'affichage du nombre de vies sur l'écran de jeu
+* mise en place de flashs colorés pour montrer qu'on a gagné ou perdu une vie sans avoir à regarder les coeurs restants
+* ajout d'un bouton PAUSE sur l'écran de jeu pour quitter une partie (ESC au clavier, clic sur bouton pour souris et tactile, X pour game controller)
+* nettoyage des HitTest sur les éléments ajoutés sur l'écran de jeu
+* prise en charge du D-Pad des contrôleurs de jeu pour bouger pendant une partie (mais en event, donc pas idéal)
+* prise en charge des sticks des contrôleurs de jeu pour bouger pendant une partie (mais en event, donc pas idéal)
+* mise à jour des informations de déploiement dans les informations de version du projet
+* déclaration du jeu sur le site de la Global Game Jam 2025 et publication d'une version Windows & Mac
+* ajout de la configuration liée à Dproj2WinSetup pour la création des installeurs Windows 32&64 bits signés
