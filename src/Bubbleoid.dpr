@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T22:52:52.000+01:00
-/// Signature : b035660d351292660e327650f7af1b7f1028838c
+/// File last update : 2025-01-26T12:05:14.000+01:00
+/// Signature : 36352bda3b1be2954501b4b89eae3401d50147cd
 /// ***************************************************************************
 /// </summary>
 
@@ -84,9 +84,9 @@ uses
   Olf.FMX.TextImageFrame in '..\lib-externes\librairies\src\Olf.FMX.TextImageFrame.pas' {OlfFMXTextImageFrame: TFrame},
   uSceneTestButtonsAndDialogs in 'uSceneTestButtonsAndDialogs.pas' {SceneTestButtonsAndDialogs: TFrame},
   cButtonIcon in 'cButtonIcon.pas' {ButtonIcon: TFrame},
-  cDialogBox in 'cDialogBox.pas' {DialogBox: TFrame},
   uSceneHome in 'uSceneHome.pas' {SceneHome: TFrame},
-  udmAdobeStock_244522135_244522157 in '..\_PRIVATE\assets\AdobeStock\AdobeStock_244522135_244522157\BubbleFontPNG\udmAdobeStock_244522135_244522157.pas' {dmAdobeStock_244522135_244522157: TDataModule};
+  udmAdobeStock_244522135_244522157 in '..\_PRIVATE\assets\AdobeStock\AdobeStock_244522135_244522157\BubbleFontPNG\udmAdobeStock_244522135_244522157.pas' {dmAdobeStock_244522135_244522157: TDataModule},
+  cDialogBox in 'cDialogBox.pas' {DialogBox: TFrame};
 
 {$R *.res}
 
