@@ -2,6 +2,7 @@ inherited SceneBackground: TSceneBackground
   HitTest = False
   Size.Width = 665.000000000000000000
   Size.Height = 435.000000000000000000
+  OnResized = FrameResized
   object rBackground: TRectangle
     Align = Client
     Fill.Color = claBlue
@@ -26,5 +27,6 @@ inherited SceneBackground: TSceneBackground
     Size.Width = 665.000000000000000000
     Size.Height = 435.000000000000000000
     Size.PlatformDefault = False
+    WrapMode = Original
   end
 end

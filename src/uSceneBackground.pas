@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T15:04:54.000+01:00
-/// Signature : 7b81d7b971c14d999f0b0aaf26e74a2463fd6d97
+/// File last update : 2025-01-26T16:23:48.000+01:00
+/// Signature : 3106119d9191532244724468dc9d57a67b335cea
 /// ***************************************************************************
 /// </summary>
 
@@ -56,10 +56,13 @@ type
     imgBubbleField: TImage;
     LoopAnim: TTimer;
     procedure LoopAnimTimer(Sender: TObject);
+    procedure FrameResized(Sender: TObject);
   private
   protected
+    CenterX, CenterY: Single;
   public
-    StarField: TStarsList;
+    // TODO : transférer les variables dans un TGameData personnalisé
+    BubbleField: TStarsList;
     SpeedX, SpeedY, SpeedZ: Single;
     procedure ShowScene; override;
     procedure HideScene; override;
@@ -71,11 +74,14 @@ implementation
 
 {$R *.fmx}
 
+uses
+  uConsts;
+
 constructor TSceneBackground.Create(AOwner: TComponent);
 begin
   inherited;
-  // TODO : transférer les variables dans un TGameData personnalisé
-  StarField := TStarsList.Create(5000, 10000, 10000, 10000);
+  BubbleField := TStarsList.Create(CNBBubbles, CFieldSize, CFieldSize,
+    CFieldSize);
   SpeedX := 0;
   SpeedY := 0;
   SpeedZ := 1;
@@ -83,8 +89,14 @@ end;
 
 destructor TSceneBackground.Destroy;
 begin
-  StarField.free;
+  BubbleField.free;
   inherited;
+end;
+
+procedure TSceneBackground.FrameResized(Sender: TObject);
+begin
+  CenterX := (width / 2);
+  CenterY := (height / 2);
 end;
 
 procedure TSceneBackground.HideScene;
@@ -95,42 +107,70 @@ begin
 end;
 
 procedure TSceneBackground.LoopAnimTimer(Sender: TObject);
+const
+  CCircleDiameter = 128;
+  CCircleRadius = CCircleDiameter / 2;
 var
   BMP: TBitmap;
+  BMPScale: Single;
   i: integer;
-  X, Y: integer;
-  CenterX, CenterY: integer;
-const
-  CircleDiameter = 256;
-  CircleRadius = CircleDiameter / 2;
+  X, Y: Single;
+  BubbleRadius: Single;
 begin
-  StarField.Move(round(SpeedX), round(SpeedY), round(SpeedZ));
+  BMPScale := imgBubbleField.Bitmap.BitmapScale;
+
   // création d'un bitmap
-  BMP := TBitmap.Create(round(width), round(height));
+  BMP := TBitmap.Create(round(width * BMPScale), round(height * BMPScale));
   try
+    BMP.BitmapScale := BMPScale;
+
     BMP.Clear(talphacolors.Darkblue);
-    // TODO : don't forget the BitmapScale
-    CenterX := round((BMP.width / 2) + SpeedX);
-    CenterY := round((BMP.height / 2) - SpeedY);
+
     BMP.canvas.BeginScene;
     try
+      BMP.canvas.Fill.Color := talphacolors.White;
+      BMP.canvas.stroke.Kind := TBrushKind.None;
+
       // parcourt de la liste des étoiles pour affichage de celles qui sont devant nous
-      for i := 0 to StarField.count - 1 do
-        if (StarField[i].z > 0) and (StarField[i].z < CircleDiameter) then
+      for i := 0 to CNBBubbles - 1 do
+      begin
+        BubbleField[i].X := BubbleField[i].X - SpeedX;
+        if (BubbleField[i].X > CFieldSize) then
+          while (BubbleField[i].X > CFieldSize) do
+            BubbleField[i].X := BubbleField[i].X - 2 * CFieldSize
+        else if (BubbleField[i].X < -CFieldSize) then
+          while (BubbleField[i].X < -CFieldSize) do
+            BubbleField[i].X := BubbleField[i].X + 2 * CFieldSize;
+        BubbleField[i].Y := BubbleField[i].Y - SpeedY;
+        if (BubbleField[i].Y > CFieldSize) then
+          while (BubbleField[i].Y > CFieldSize) do
+            BubbleField[i].Y := BubbleField[i].Y - 2 * CFieldSize
+        else if (BubbleField[i].Y < -CFieldSize) then
+          while (BubbleField[i].Y < -CFieldSize) do
+            BubbleField[i].Y := BubbleField[i].Y + 2 * CFieldSize;
+        BubbleField[i].Z := BubbleField[i].Z - SpeedZ;
+        if (BubbleField[i].Z > CFieldSize) then
+          while (BubbleField[i].Z > CFieldSize) do
+            BubbleField[i].Z := BubbleField[i].Z - 2 * CFieldSize
+        else if (BubbleField[i].Z < -CFieldSize) then
+          while (BubbleField[i].Z < -CFieldSize) do
+            BubbleField[i].Z := BubbleField[i].Z + 2 * CFieldSize;
+
+        if (BubbleField[i].Z > 0) and (BubbleField[i].Z < CCircleDiameter) then
         begin
-          X := CenterX + round(StarField[i].X / StarField[i].z);
-          Y := CenterY - round(StarField[i].Y / StarField[i].z);
-          if (X >= 0) and (X < BMP.width) and (Y >= 0) and (Y < BMP.height) then
-          // TODO : tester les angles de la bulle plutôt que son centre
+          X := CenterX + SpeedX + BubbleField[i].X / BubbleField[i].Z * 5;
+          Y := CenterY + SpeedY - BubbleField[i].Y / BubbleField[i].Z * 5;
+          if (X >= 0) and (X < width) and (Y >= 0) and (Y < height) then
           begin
-            BMP.canvas.Fill.Color := talphacolors.White;
-            BMP.canvas.stroke.Kind := TBrushKind.None;
-            BMP.canvas.FillEllipse
-              (trectf.Create(X - CircleRadius / StarField[i].z,
-              Y - CircleRadius / StarField[i].z, X + CircleRadius / StarField[i]
-              .z, Y + CircleRadius / StarField[i].z), 1 - 0.7 / StarField[i].z);
+            BubbleRadius := CCircleDiameter / BubbleField[i].Z;
+            BMP.canvas.FillEllipse(trectf.Create(X - BubbleRadius,
+              Y - BubbleRadius, X + BubbleRadius, Y + BubbleRadius),
+              1 - 0.7 / BubbleField[i].Z);
+            // TODO : remplacer les ellipses par des images de bulles (TSVGBubbles)
           end;
+          // TODO : si un élément passe de Z>0 à Z<0, tester collision avec zone du joueur si le jeu est actif
         end;
+      end;
     finally
       BMP.canvas.EndScene;
     end;
@@ -139,6 +179,8 @@ begin
   finally
     BMP.free;
   end;
+
+  // TODO : rendre la vitesse maximale paramétrable et peut-être modifiable par les joueurs
   if SpeedZ < 10 then
     SpeedZ := SpeedZ * 1.1;
 end;
@@ -148,6 +190,7 @@ begin
   inherited;
   SendToBack;
 
+  LoopAnim.interval := round(1000 / cfps);
   LoopAnim.Enabled := true;
 end;
 
