@@ -302,7 +302,7 @@
             <Form>frmMain</Form>
             <FormType>fmx</FormType>
         </DCCReference>
-        <DCCReference Include="uStarFieldData.pas"/>
+        <DCCReference Include="..\src\uStarFieldData.pas"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

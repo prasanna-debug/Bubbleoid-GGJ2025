@@ -36,7 +36,7 @@ uses
   System.StartUpCopy,
   FMX.Forms,
   fMain in 'fMain.pas' {frmMain},
-  uStarFieldData in 'uStarFieldData.pas';
+  uStarFieldData in '..\src\uStarFieldData.pas';
 
 {$R *.res}
 
