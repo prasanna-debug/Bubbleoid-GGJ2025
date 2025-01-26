@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T18:42:00.000+01:00
-/// Signature : a100a874e74bafca9957ccb4493fa5cf4b7340e7
+/// File last update : 2025-01-26T14:55:10.000+01:00
+/// Signature : 35f468182fc2a0af264c3dbc21349ad8cb821866
 /// ***************************************************************************
 /// </summary>
 
@@ -38,7 +38,8 @@ uses
   FMX.Graphics,
   USVGInputPrompts,
   USVGBubbleFont,
-  USVGAdobeStock;
+  USVGAdobeStock,
+  USVGBubbles;
 
 /// <summary>
 /// Returns a bitmap from a SVG image
@@ -48,6 +49,8 @@ function getBitmapFromSVG(const Index: TSVGInputPromptsIndex;
 function getBitmapFromSVG(const Index: TSVGAdobeStockIndex;
   const width, height: single; const BitmapScale: single): tbitmap; overload;
 function getBitmapFromSVG(const Index: TSVGBubbleFontIndex;
+  const width, height: single; const BitmapScale: single): tbitmap; overload;
+function getBitmapFromSVG(const Index: TSVGBubblesIndex;
   const width, height: single; const BitmapScale: single): tbitmap; overload;
 
 implementation
@@ -76,11 +79,19 @@ begin
     round(width), round(height), BitmapScale);
 end;
 
+function getBitmapFromSVG(const Index: TSVGBubblesIndex;
+  const width, height: single; const BitmapScale: single): tbitmap; overload;
+begin
+  result := TOlfSVGBitmapList.Bitmap(ord(Index) + TSVGBubbles.Tag, round(width),
+    round(height), BitmapScale);
+end;
+
 procedure RegisterSVGImages;
 begin
   TSVGInputPrompts.Tag := TOlfSVGBitmapList.AddItem(SVGInputPrompts);
   TSVGAdobeStock.Tag := TOlfSVGBitmapList.AddItem(SVGAdobeStock);
   TSVGBubbleFont.Tag := TOlfSVGBitmapList.AddItem(SVGBubbleFont);
+  TSVGBubbles.Tag := TOlfSVGBitmapList.AddItem(SVGBubbles);
 end;
 
 initialization
