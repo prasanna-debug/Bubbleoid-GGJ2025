@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T16:23:48.000+01:00
-/// Signature : 3106119d9191532244724468dc9d57a67b335cea
+/// File last update : 2025-01-26T19:38:52.000+01:00
+/// Signature : 64d1a152b84e0fc6fb9514a01c1272a266889a70
 /// ***************************************************************************
 /// </summary>
 
@@ -52,9 +52,9 @@ uses
 
 type
   TSceneBackground = class(T__SceneAncestor)
-    rBackground: TRectangle;
     imgBubbleField: TImage;
     LoopAnim: TTimer;
+    UserCircle: TCircle;
     procedure LoopAnimTimer(Sender: TObject);
     procedure FrameResized(Sender: TObject);
   private
@@ -63,11 +63,14 @@ type
   public
     // TODO : transférer les variables dans un TGameData personnalisé
     BubbleField: TStarsList;
-    SpeedX, SpeedY, SpeedZ: Single;
+    UserCircleCenterX, UserCircleCenterY, UserCircleRadius: Single;
+    IsPlaying: boolean;
     procedure ShowScene; override;
     procedure HideScene; override;
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    procedure InitGame;
+    procedure RefreshUserCircle;
   end;
 
 implementation
@@ -75,16 +78,15 @@ implementation
 {$R *.fmx}
 
 uses
-  uConsts;
+  uConsts,
+  uGameData,
+  uScene;
 
 constructor TSceneBackground.Create(AOwner: TComponent);
 begin
   inherited;
   BubbleField := TStarsList.Create(CNBBubbles, CFieldSize, CFieldSize,
     CFieldSize);
-  SpeedX := 0;
-  SpeedY := 0;
-  SpeedZ := 1;
 end;
 
 destructor TSceneBackground.Destroy;
@@ -97,6 +99,7 @@ procedure TSceneBackground.FrameResized(Sender: TObject);
 begin
   CenterX := (width / 2);
   CenterY := (height / 2);
+  RefreshUserCircle;
 end;
 
 procedure TSceneBackground.HideScene;
@@ -106,17 +109,27 @@ begin
   LoopAnim.Enabled := false;
 end;
 
+procedure TSceneBackground.InitGame;
+begin
+  IsPlaying := tgamedata.DefaultGameData.IsPlaying;
+  RefreshUserCircle;
+  SpeedX := 0;
+  SpeedY := 0;
+  SpeedZ := 1;
+end;
+
 procedure TSceneBackground.LoopAnimTimer(Sender: TObject);
-const
-  CCircleDiameter = 128;
-  CCircleRadius = CCircleDiameter / 2;
 var
   BMP: TBitmap;
   BMPScale: Single;
   i: integer;
-  X, Y: Single;
+  X, y: Single;
   BubbleRadius: Single;
+  PrevX, PrevY, PrevZ: Single;
 begin
+  if (IsPlaying <> tgamedata.DefaultGameData.IsPlaying) then
+    InitGame;
+
   BMPScale := imgBubbleField.Bitmap.BitmapScale;
 
   // création d'un bitmap
@@ -134,6 +147,7 @@ begin
       // parcourt de la liste des étoiles pour affichage de celles qui sont devant nous
       for i := 0 to CNBBubbles - 1 do
       begin
+        PrevX := BubbleField[i].X;
         BubbleField[i].X := BubbleField[i].X - SpeedX;
         if (BubbleField[i].X > CFieldSize) then
           while (BubbleField[i].X > CFieldSize) do
@@ -141,13 +155,15 @@ begin
         else if (BubbleField[i].X < -CFieldSize) then
           while (BubbleField[i].X < -CFieldSize) do
             BubbleField[i].X := BubbleField[i].X + 2 * CFieldSize;
-        BubbleField[i].Y := BubbleField[i].Y - SpeedY;
-        if (BubbleField[i].Y > CFieldSize) then
-          while (BubbleField[i].Y > CFieldSize) do
-            BubbleField[i].Y := BubbleField[i].Y - 2 * CFieldSize
-        else if (BubbleField[i].Y < -CFieldSize) then
-          while (BubbleField[i].Y < -CFieldSize) do
-            BubbleField[i].Y := BubbleField[i].Y + 2 * CFieldSize;
+        PrevY := BubbleField[i].y;
+        BubbleField[i].y := BubbleField[i].y - SpeedY;
+        if (BubbleField[i].y > CFieldSize) then
+          while (BubbleField[i].y > CFieldSize) do
+            BubbleField[i].y := BubbleField[i].y - 2 * CFieldSize
+        else if (BubbleField[i].y < -CFieldSize) then
+          while (BubbleField[i].y < -CFieldSize) do
+            BubbleField[i].y := BubbleField[i].y + 2 * CFieldSize;
+        PrevZ := BubbleField[i].Z;
         BubbleField[i].Z := BubbleField[i].Z - SpeedZ;
         if (BubbleField[i].Z > CFieldSize) then
           while (BubbleField[i].Z > CFieldSize) do
@@ -158,17 +174,47 @@ begin
 
         if (BubbleField[i].Z > 0) and (BubbleField[i].Z < CCircleDiameter) then
         begin
-          X := CenterX + SpeedX + BubbleField[i].X / BubbleField[i].Z * 5;
-          Y := CenterY + SpeedY - BubbleField[i].Y / BubbleField[i].Z * 5;
-          if (X >= 0) and (X < width) and (Y >= 0) and (Y < height) then
+          X := CenterX + SpeedX + BubbleField[i].X / BubbleField[i].Z;
+          // TODO : changer la distance = taille de chaque cellule ? / "* 5";
+          y := CenterY + SpeedY - BubbleField[i].y / BubbleField[i].Z;
+          // TODO : changer la distance = taille de chaque cellule ? / "* 5";
+          if (X >= 0) and (X < width) and (y >= 0) and (y < height) then
           begin
-            BubbleRadius := CCircleDiameter / BubbleField[i].Z;
+            BubbleRadius := 3 * CCircleRadius / BubbleField[i].Z;
             BMP.canvas.FillEllipse(trectf.Create(X - BubbleRadius,
-              Y - BubbleRadius, X + BubbleRadius, Y + BubbleRadius),
+              y - BubbleRadius, X + BubbleRadius, y + BubbleRadius),
               1 - 0.7 / BubbleField[i].Z);
             // TODO : remplacer les ellipses par des images de bulles (TSVGBubbles)
           end;
-          // TODO : si un élément passe de Z>0 à Z<0, tester collision avec zone du joueur si le jeu est actif
+        end
+        else if tgamedata.DefaultGameData.IsPlaying and (PrevZ > 0) and
+          (BubbleField[i].Z < 0) then
+        begin
+          // TODO : recalculer la position lors de l'impact en trouvant les coordonnées X,Y de traversée du plan de l'écran avec Z=0
+          X := CenterX + SpeedX + PrevX;
+          y := CenterY + SpeedY - PrevY;
+          BubbleRadius := 3 * CCircleRadius; // z=0 au passage de l'écran
+          if (sqrt(sqr(X - UserCircleCenterX) + sqr(y - UserCircleCenterY)) -
+            BubbleRadius <= UserCircleRadius) then
+          begin
+            // choc => perte de vie
+            tgamedata.DefaultGameData.NbLives :=
+              tgamedata.DefaultGameData.NbLives - 1;
+            if (tgamedata.DefaultGameData.NbLives < 1) then
+            begin
+              tgamedata.DefaultGameData.StopGame;
+              tscene.current := tscenetype.GameOverLost;
+            end;
+          end
+          else
+          begin
+            tgamedata.DefaultGameData.Score :=
+              tgamedata.DefaultGameData.Score + 1;
+            if (0 = tgamedata.DefaultGameData.Score mod (CPalierScorePourVie *
+              tgamedata.DefaultGameData.Level)) then
+              tgamedata.DefaultGameData.NbLives :=
+                tgamedata.DefaultGameData.NbLives + 1;
+          end;
         end;
       end;
     finally
@@ -181,14 +227,31 @@ begin
   end;
 
   // TODO : rendre la vitesse maximale paramétrable et peut-être modifiable par les joueurs
-  if SpeedZ < 10 then
+  if SpeedZ < 20 then
     SpeedZ := SpeedZ * 1.1;
+end;
+
+procedure TSceneBackground.RefreshUserCircle;
+begin
+  UserCircle.width := CCircleDiameter * 1.5;
+  UserCircle.height := CCircleDiameter * 1.5;
+  UserCircleCenterX := UserCircle.Position.X + UserCircle.width / 2;
+  UserCircleCenterY := UserCircle.Position.y + UserCircle.height / 2;
+  UserCircleRadius := UserCircle.width / 2;
+  UserCircle.visible := IsPlaying;
 end;
 
 procedure TSceneBackground.ShowScene;
 begin
   inherited;
   SendToBack;
+
+  imgBubbleField.parent := application.mainform;
+  imgBubbleField.visible := true;
+  self.visible := false;
+
+  IsPlaying := false;
+  InitGame;
 
   LoopAnim.interval := round(1000 / cfps);
   LoopAnim.Enabled := true;

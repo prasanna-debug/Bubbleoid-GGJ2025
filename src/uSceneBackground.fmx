@@ -3,15 +3,6 @@ inherited SceneBackground: TSceneBackground
   Size.Width = 665.000000000000000000
   Size.Height = 435.000000000000000000
   OnResized = FrameResized
-  object rBackground: TRectangle
-    Align = Client
-    Fill.Color = claBlue
-    HitTest = False
-    Size.Width = 665.000000000000000000
-    Size.Height = 435.000000000000000000
-    Size.PlatformDefault = False
-    Visible = False
-  end
   object LoopAnim: TTimer
     Enabled = False
     Interval = 16
@@ -23,10 +14,21 @@ inherited SceneBackground: TSceneBackground
     MultiResBitmap = <
       item
       end>
-    Align = Client
+    Align = Contents
+    HitTest = False
+    MarginWrapMode = Original
     Size.Width = 665.000000000000000000
     Size.Height = 435.000000000000000000
     Size.PlatformDefault = False
     WrapMode = Original
+    object UserCircle: TCircle
+      Align = Center
+      Fill.Kind = None
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Color = claGold
+      Stroke.Thickness = 5.000000000000000000
+    end
   end
 end
