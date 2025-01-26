@@ -21,6 +21,7 @@ inherited SceneGame: TSceneGame
   end
   object flNbLives: TFlowLayout
     Align = Bottom
+    HitTest = False
     Margins.Left = 20.000000000000000000
     Margins.Right = 20.000000000000000000
     Margins.Bottom = 20.000000000000000000
@@ -36,6 +37,7 @@ inherited SceneGame: TSceneGame
     object rLives: TRectangle
       Fill.Bitmap.WrapMode = Tile
       Fill.Kind = Bitmap
+      HitTest = False
       Position.X = 90.000000000000000000
       Size.Width = 50.000000000000000000
       Size.Height = 50.000000000000000000
@@ -45,6 +47,7 @@ inherited SceneGame: TSceneGame
     object rDeaths: TRectangle
       Fill.Bitmap.WrapMode = Tile
       Fill.Kind = Bitmap
+      HitTest = False
       Position.X = 140.000000000000000000
       Size.Width = 50.000000000000000000
       Size.Height = 50.000000000000000000
@@ -58,5 +61,33 @@ inherited SceneGame: TSceneGame
     OnTimer = UpdateScoreTimer
     Left = 144
     Top = 104
+  end
+  object Layout1: TLayout
+    Align = Contents
+    Size.Width = 320.000000000000000000
+    Size.Height = 240.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 4
+    object lRightButtons: TLayout
+      Align = Right
+      Position.X = 266.000000000000000000
+      Size.Width = 54.000000000000000000
+      Size.Height = 240.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      inline btnPause: TButtonIcon
+        Position.Y = 8.000000000000000000
+        Size.Width = 54.000000000000000000
+        Size.Height = 54.000000000000000000
+        Size.PlatformDefault = False
+        OnClick = btnPauseClick
+      end
+    end
+  end
+  object DGEGamepadManager1: TDGEGamepadManager
+    OnAxesChange = DGEGamepadManager1AxesChange
+    OnDirectionPadChange = DGEGamepadManager1DirectionPadChange
+    Left = 152
+    Top = 112
   end
 end

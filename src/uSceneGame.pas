@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T19:39:02.000+01:00
-/// Signature : a44e6ca27a14a3b19a6cd4d70d1cf26b0af6f9b7
+/// File last update : 2025-01-26T20:06:32.000+01:00
+/// Signature : 18e4e709c29db7c2737f84ab6defe5c8c4a37435
 /// ***************************************************************************
 /// </summary>
 
@@ -51,7 +51,10 @@ uses
   System.Messaging,
   FMX.Controls.Presentation,
   Olf.FMX.TextImageFrame,
-  FMX.Layouts;
+  FMX.Layouts,
+  _ButtonsAncestor,
+  cButtonIcon,
+  Gamolf.RTL.Joystick;
 
 type
   TSceneGame = class(T__SceneAncestor)
@@ -61,14 +64,27 @@ type
     flNbLives: TFlowLayout;
     rLives: TRectangle;
     rDeaths: TRectangle;
+    Layout1: TLayout;
+    lRightButtons: TLayout;
+    btnPause: TButtonIcon;
+    DGEGamepadManager1: TDGEGamepadManager;
     procedure FrameKeyDown(Sender: TObject; var Key: Word;
       var KeyChar: WideChar; Shift: TShiftState);
     procedure UpdateScoreTimer(Sender: TObject);
+    procedure btnPauseClick(Sender: TObject);
+    procedure DGEGamepadManager1AxesChange(const GamepadID: Integer;
+      const Axe: TJoystickAxes; const Value: Single);
+    procedure DGEGamepadManager1DirectionPadChange(const GamepadID: Integer;
+      const Value: TJoystickDPad);
   private
     FNbLives: int64;
     FNbLivesMax: int64;
     FScore: int64;
     procedure SetScore(const Value: int64);
+    procedure GoToLeft;
+    procedure GoToRight;
+    procedure GoToUp;
+    procedure GoToDown;
   protected
     procedure DoNbLivesChanged(const Sender: TObject; const Msg: TMessage);
     procedure ShowNbLives;
@@ -79,7 +95,6 @@ type
     procedure HideScene; override;
   end;
 
-  // TODO : ajouter affichage du score
 implementation
 
 {$R *.fmx}
@@ -94,6 +109,32 @@ uses
   udmAdobeStock_244522135_244522157;
 
 { TSceneGame }
+
+procedure TSceneGame.btnPauseClick(Sender: TObject);
+begin
+  TGameData.DefaultGameData.StopGame;
+  TScene.Current := TSceneType.GameOverLost;
+  // TODO : à remplacer par une mise en pause et retour à l'écran d'accueil
+end;
+
+procedure TSceneGame.DGEGamepadManager1AxesChange(const GamepadID: Integer;
+  const Axe: TJoystickAxes; const Value: Single);
+begin
+  // TODO : à compléter
+end;
+
+procedure TSceneGame.DGEGamepadManager1DirectionPadChange(const GamepadID
+  : Integer; const Value: TJoystickDPad);
+begin
+  if Value = TJoystickDPad.Top then
+    GoToUp
+  else if Value = TJoystickDPad.Right then
+    GoToRight
+  else if Value = TJoystickDPad.Bottom then
+    GoToDown
+  else if Value = TJoystickDPad.Left then
+    GoToLeft;
+end;
 
 procedure TSceneGame.DoNbLivesChanged(const Sender: TObject;
   const Msg: TMessage);
@@ -115,6 +156,7 @@ begin
   r.Fill.Color := Color;
   r.Opacity := 0.3;
   r.Align := TAlignLayout.Contents;
+  r.HitTest := false;
   tthread.CreateAnonymousThread(
     procedure
     begin
@@ -133,28 +175,22 @@ begin
   if Key = vkLeft then
   begin
     Key := 0;
-    SpeedX := SpeedX - speedz;
+    GoToLeft;
   end
   else if Key = vkRight then
   begin
     Key := 0;
-    SpeedX := SpeedX + speedz;
+    GoToRight;
   end
   else if Key = vkup then
   begin
     Key := 0;
-    SpeedY := SpeedY - speedz;
+    GoToUp;
   end
   else if Key = vkDown then
   begin
     Key := 0;
-    SpeedY := SpeedY + speedz;
-  end
-  else if (Key = vkEscape) or (Key = vkHardwareBack) then
-  begin
-    Key := 0;
-    tgamedata.DefaultGameData.StopGame;
-    tscene.Current := tscenetype.GameOverLost;
+    GoToDown;
   end;
 end;
 
@@ -167,6 +203,26 @@ begin
     DoNbLivesChanged, true);
 end;
 
+procedure TSceneGame.GoToDown;
+begin
+  SpeedY := SpeedY - speedz;
+end;
+
+procedure TSceneGame.GoToUp;
+begin
+  SpeedY := SpeedY + speedz;
+end;
+
+procedure TSceneGame.GoToRight;
+begin
+  SpeedX := SpeedX - speedz;
+end;
+
+procedure TSceneGame.GoToLeft;
+begin
+  SpeedX := SpeedX + speedz;
+end;
+
 procedure TSceneGame.SetScore(const Value: int64);
 begin
   FScore := Value;
@@ -176,9 +232,9 @@ end;
 procedure TSceneGame.ShowNbLives;
 var
   GDNbLives: int64;
-  w: single;
+  w: Single;
 begin
-  GDNbLives := tgamedata.DefaultGameData.NbLives;
+  GDNbLives := TGameData.DefaultGameData.NbLives;
 
   w := GDNbLives * rLives.height;
   if w < width then
@@ -213,7 +269,7 @@ begin
   rDeaths.Fill.Bitmap.Bitmap.Assign
     (getBitmapFromSVG(TSVGAdobeStockIndex.HeartBroken, rLives.height,
     rLives.height, rLives.Fill.Bitmap.Bitmap.BitmapScale));
-  FNbLives := tgamedata.DefaultGameData.NbLives;
+  FNbLives := TGameData.DefaultGameData.NbLives;
   FNbLivesMax := CDefaultNbLives;
   // TODO : ajouter NbLivesMax sur GameData dans le cas de Pause/Resume d'une partie
   ShowNbLives;
@@ -223,13 +279,17 @@ begin
   tiScore.Font := dmAdobeStock_244522135_244522157.ImageList;
   Score := 0;
   UpdateScore.Enabled := true;
+
+  btnPause.IconType := TIconType.Pause;
+  btnPause.BackgroundColor := TBackgroundColor.green;
+  TUIItemsList.Current.AddControl(btnPause, nil, nil, nil, nil, false, true);
 end;
 
 procedure TSceneGame.UpdateScoreTimer(Sender: TObject);
 var
   GDScore: int64;
 begin
-  GDScore := tgamedata.DefaultGameData.Score;
+  GDScore := TGameData.DefaultGameData.Score;
   if Score < GDScore then
     Score := Score + 1
   else if Score > GDScore then
@@ -244,11 +304,11 @@ TMessageManager.DefaultManager.SubscribeToMessage(TSceneFactory,
     NewScene: TSceneGame;
   begin
     if (Msg is TSceneFactory) and
-      ((Msg as TSceneFactory).SceneType = tscenetype.Game) then
+      ((Msg as TSceneFactory).SceneType = TSceneType.Game) then
     begin
       NewScene := TSceneGame.Create(application.mainform);
       NewScene.parent := application.mainform;
-      tscene.RegisterScene(tscenetype.Game, NewScene);
+      TScene.RegisterScene(TSceneType.Game, NewScene);
     end;
   end);
 
