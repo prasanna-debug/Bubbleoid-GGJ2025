@@ -1,11 +1,30 @@
 inherited SceneBackground: TSceneBackground
   HitTest = False
-  object Rectangle1: TRectangle
+  Size.Width = 665.000000000000000000
+  Size.Height = 435.000000000000000000
+  object rBackground: TRectangle
     Align = Client
     Fill.Color = claBlue
     HitTest = False
-    Size.Width = 320.000000000000000000
-    Size.Height = 240.000000000000000000
+    Size.Width = 665.000000000000000000
+    Size.Height = 435.000000000000000000
+    Size.PlatformDefault = False
+    Visible = False
+  end
+  object LoopAnim: TTimer
+    Enabled = False
+    Interval = 16
+    OnTimer = LoopAnimTimer
+    Left = 292
+    Top = 212
+  end
+  object imgBubbleField: TImage
+    MultiResBitmap = <
+      item
+      end>
+    Align = Client
+    Size.Width = 665.000000000000000000
+    Size.Height = 435.000000000000000000
     Size.PlatformDefault = False
   end
 end
