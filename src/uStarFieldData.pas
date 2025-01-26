@@ -1,9 +1,9 @@
 /// <summary>
 /// ***************************************************************************
 ///
-/// Delphi FMX Game Snippets
+/// Bubbleoid
 ///
-/// Copyright 2021-2025 Patrick Prémartin under AGPL 3.0 license.
+/// Copyright 2025 Patrick Prémartin under AGPL 3.0 license.
 ///
 /// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 /// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
@@ -15,31 +15,18 @@
 ///
 /// ***************************************************************************
 ///
-/// Examples of what is done when developing video games: sprite management,
-/// background music, sound effects, animations, ...
-///
-/// Projects are developed under Delphi with its FireMonkey multiplatform
-/// framework to run our projects under Windows, macOS, iOS, Android and Linux
-/// from the same code base.
-///
-/// Not all images and musics used in this repository are free of charge.
-/// Reuse them only if you have a license. They remain the property of their
-/// respective authors and are only present in the programs for demo purposes.
-///
-/// ***************************************************************************
-///
 /// Author(s) :
 /// Patrick PREMARTIN
 ///
 /// Site :
-/// https://fmxgamesnippets.developpeur-pascal.fr
+/// https://bubbleoid.gamolf.fr/
 ///
 /// Project site :
-/// https://github.com/DeveloppeurPascal/Delphi-FMX-Game-Snippets
+/// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T12:36:06.000+01:00
-/// Signature : 7a68b552daf5b0444d89047db130639d03f75c3c
+/// File last update : 2025-01-26T16:04:12.000+01:00
+/// Signature : 719a38c0cab5e82b6f7a7f1c233c3fdbaa925bb9
 /// ***************************************************************************
 /// </summary>
 
@@ -53,17 +40,17 @@ uses
 type
   TStar = class(TObject)
   private
-    FZ: integer;
-    FX: integer;
-    FY: integer;
-    procedure SetX(const Value: integer);
-    procedure SetY(const Value: integer);
-    procedure SetZ(const Value: integer);
+    FZ: single;
+    FX: single;
+    FY: single;
+    procedure SetX(const Value: single);
+    procedure SetY(const Value: single);
+    procedure SetZ(const Value: single);
   protected
   public
-    property X: integer read FX write SetX;
-    property Y: integer read FY write SetY;
-    property Z: integer read FZ write SetZ;
+    property X: single read FX write SetX;
+    property Y: single read FY write SetY;
+    property Z: single read FZ write SetZ;
     class function GetNewStar(const MaxX, MaxY, MaxZ: integer): TStar;
   end;
 
@@ -79,7 +66,7 @@ type
       const AMaxX: integer = 500; const AMaxY: integer = 500;
       const AMaxZ: integer = 500); virtual;
     destructor Destroy; override;
-    procedure Move(VX, VY, VZ: integer);
+    procedure Move(VX, VY, VZ: single);
   end;
 
 implementation
@@ -94,17 +81,17 @@ begin
   result.Z := random(2 * MaxZ) - MaxZ;
 end;
 
-procedure TStar.SetX(const Value: integer);
+procedure TStar.SetX(const Value: single);
 begin
   FX := Value;
 end;
 
-procedure TStar.SetY(const Value: integer);
+procedure TStar.SetY(const Value: single);
 begin
   FY := Value;
 end;
 
-procedure TStar.SetZ(const Value: integer);
+procedure TStar.SetZ(const Value: single);
 begin
   FZ := Value;
 end;
@@ -131,7 +118,7 @@ begin
   inherited;
 end;
 
-procedure TStarsList.Move(VX, VY, VZ: integer);
+procedure TStarsList.Move(VX, VY, VZ: single);
 var
   i: integer;
 begin
