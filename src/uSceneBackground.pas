@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T19:38:52.000+01:00
-/// Signature : 64d1a152b84e0fc6fb9514a01c1272a266889a70
+/// File last update : 2025-01-26T20:01:30.000+01:00
+/// Signature : 1cab3ffbceb11346848564a77385870b427e7cb7
 /// ***************************************************************************
 /// </summary>
 
@@ -126,9 +126,33 @@ var
   X, y: Single;
   BubbleRadius: Single;
   PrevX, PrevY, PrevZ: Single;
+  NewCenterX, NewCenterY: Single;
 begin
   if (IsPlaying <> tgamedata.DefaultGameData.IsPlaying) then
     InitGame;
+
+  NewCenterX := CenterX + SpeedX;
+  if NewCenterX < 0 then
+  begin
+    NewCenterX := 0;
+    SpeedX := -CenterX;
+  end
+  else if NewCenterX > width then
+  begin
+    NewCenterX := width;
+    SpeedX := CenterX;
+  end;
+  NewCenterY := CenterY + SpeedY;
+  if NewCenterY < 0 then
+  begin
+    NewCenterY := 0;
+    SpeedY := -CenterY;
+  end
+  else if NewCenterY > height then
+  begin
+    NewCenterY := height;
+    SpeedY := CenterY;
+  end;
 
   BMPScale := imgBubbleField.Bitmap.BitmapScale;
 
@@ -174,9 +198,9 @@ begin
 
         if (BubbleField[i].Z > 0) and (BubbleField[i].Z < CCircleDiameter) then
         begin
-          X := CenterX + SpeedX + BubbleField[i].X / BubbleField[i].Z;
+          X := NewCenterX + BubbleField[i].X / BubbleField[i].Z;
           // TODO : changer la distance = taille de chaque cellule ? / "* 5";
-          y := CenterY + SpeedY - BubbleField[i].y / BubbleField[i].Z;
+          y := NewCenterY + BubbleField[i].y / BubbleField[i].Z;
           // TODO : changer la distance = taille de chaque cellule ? / "* 5";
           if (X >= 0) and (X < width) and (y >= 0) and (y < height) then
           begin
@@ -191,8 +215,8 @@ begin
           (BubbleField[i].Z < 0) then
         begin
           // TODO : recalculer la position lors de l'impact en trouvant les coordonnées X,Y de traversée du plan de l'écran avec Z=0
-          X := CenterX + SpeedX + PrevX;
-          y := CenterY + SpeedY - PrevY;
+          X := NewCenterX + PrevX;
+          y := NewCenterY - PrevY;
           BubbleRadius := 3 * CCircleRadius; // z=0 au passage de l'écran
           if (sqrt(sqr(X - UserCircleCenterX) + sqr(y - UserCircleCenterY)) -
             BubbleRadius <= UserCircleRadius) then
@@ -205,6 +229,7 @@ begin
               tgamedata.DefaultGameData.StopGame;
               tscene.current := tscenetype.GameOverLost;
             end;
+            SpeedZ := 1;
           end
           else
           begin
