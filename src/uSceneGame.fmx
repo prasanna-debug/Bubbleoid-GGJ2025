@@ -1,0 +1,62 @@
+inherited SceneGame: TSceneGame
+  OnKeyDown = FrameKeyDown
+  object lScore: TLayout
+    Align = Top
+    Margins.Left = 20.000000000000000000
+    Margins.Top = 20.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 20.000000000000000000
+    Size.Width = 280.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    inline tiScore: TOlfFMXTextImageFrame
+      Align = Center
+      HitTest = False
+      Size.Width = 320.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+    end
+  end
+  object flNbLives: TFlowLayout
+    Align = Bottom
+    Margins.Left = 20.000000000000000000
+    Margins.Right = 20.000000000000000000
+    Margins.Bottom = 20.000000000000000000
+    Position.X = 20.000000000000000000
+    Position.Y = 170.000000000000000000
+    Size.Width = 280.000000000000000000
+    Size.Height = 50.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    Justify = Center
+    JustifyLastLine = Center
+    FlowDirection = LeftToRight
+    object rLives: TRectangle
+      Fill.Bitmap.WrapMode = Tile
+      Fill.Kind = Bitmap
+      Position.X = 90.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+    object rDeaths: TRectangle
+      Fill.Bitmap.WrapMode = Tile
+      Fill.Kind = Bitmap
+      Position.X = 140.000000000000000000
+      Size.Width = 50.000000000000000000
+      Size.Height = 50.000000000000000000
+      Size.PlatformDefault = False
+      Stroke.Kind = None
+    end
+  end
+  object UpdateScore: TTimer
+    Enabled = False
+    Interval = 100
+    OnTimer = UpdateScoreTimer
+    Left = 144
+    Top = 104
+  end
+end
