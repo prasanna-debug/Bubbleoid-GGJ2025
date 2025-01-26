@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T14:17:50.000+01:00
-/// Signature : d447a916e6f4a011d901bb205c4f47431df50fb0
+/// File last update : 2025-01-26T14:53:16.000+01:00
+/// Signature : 44ba0be5742347ca9c89935c2cd7192356b54aa5
 /// ***************************************************************************
 /// </summary>
 
@@ -89,7 +89,8 @@ uses
   cDialogBox in 'cDialogBox.pas' {DialogBox: TFrame},
   uStarFieldData in 'uStarFieldData.pas',
   uSceneCredits in 'uSceneCredits.pas' {SceneCredits: TFrame},
-  uSceneGameOverLost in 'uSceneGameOverLost.pas' {SceneGameOverLost: TFrame};
+  uSceneGameOverLost in 'uSceneGameOverLost.pas' {SceneGameOverLost: TFrame},
+  USVGBubbles in '..\_PRIVATE\assets\AdobeStock\bubbles\SVG\USVGBubbles.pas';
 
 {$R *.res}
 
