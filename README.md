@@ -2,9 +2,11 @@
 
 [Cette page en français.](LISEZMOI.md)
 
-**A git repository template for my Delphi (or other) projects.**
+Created for the [Global Game Jam 2025](https://globalgamejam.org), [Bubbleoid](https://bubbleoid.gamolf.fr) is a short game. You have to move through a 3D field of bubbles and avoid them as your speed increases over time.
 
-**This template is distributed under the MIT license. The AGPL license is for the projects I create from this code repository template. Use whatever license you want if you use this template.**
+You can play with a keyboard, game controller or mouse.
+
+The game has been developed in Delphi. It's based on [Gamolf FMX Game Starter Kit](https://fmxgamestarterkit.developpeur-pascal.fr/) and [Delphi Game Engine](https://delphigameengine.developpeur-pascal.fr/) to handle the classic functionalities (music, sounds, parameters, scores, screen sequencing and user interface interactivity).
 
 This code repository contains a project developed in Object Pascal language under Delphi. You don't know what Delphi is and where to download it ? You'll learn more [on this web site](https://delphi-resources.developpeur-pascal.fr/).
 
@@ -20,13 +22,7 @@ This software is available in a directly installable or executable production ve
 
 You can download and redistribute it free of charge, provided you do not modify its content (installer, program, additional files, etc.).
 
-[Download program or installer](DDD) (WIP)
-
-If you use this software regularly and are satisfied with it, you are invited to purchase an end-user license. Purchasing a license will give you access to software updates, as well as enabling optional features.
-
-[Buy a license](FFF) (WIP)
-
-You can also [visit the software website](https://bubbleoid.gamolf.fr) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
+[Visit the game website](https://bubbleoid.gamolf.fr) to find out more about how it works, access videos and articles, find out about the different versions available and their features, contact user support...
 
 ## Source code installation
 
