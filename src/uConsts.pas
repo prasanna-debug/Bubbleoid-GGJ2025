@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-25T22:20:02.000+01:00
-/// Signature : 3f8240ba899e0641bf576996805d011bbad2fcf0
+/// File last update : 2025-01-26T16:24:50.000+01:00
+/// Signature : 61329b0f82436453dc8282f55064591ccffa740e
 /// ***************************************************************************
 /// </summary>
 
@@ -196,6 +196,11 @@ var
   GConfigXORKey: TByteDynArray;
   GGameDataXORKey: TByteDynArray;
 {$ENDIF}
+
+const
+  CNbBubbles = 500;
+  CFieldSize = CNbBubbles * 3;
+  CFPS = 30;
 
 implementation
 
