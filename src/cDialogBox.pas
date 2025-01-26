@@ -25,8 +25,8 @@
 /// https://github.com/DeveloppeurPascal/Bubbleoid-GGJ2025
 ///
 /// ***************************************************************************
-/// File last update : 2025-01-26T14:01:56.000+01:00
-/// Signature : 48eb3fdb0eb3fe023c0c8d2c93614a8b8fb24c26
+/// File last update : 2025-01-26T16:40:50.000+01:00
+/// Signature : 710dd6c5f00cd706f2a4a2ca85489cd7f176bc96
 /// ***************************************************************************
 /// </summary>
 
@@ -165,6 +165,10 @@ function TDialogBox.GetImageIndexOfUnknowChar(Sender: TOlfFMXTextImageFrame;
 begin
   if (AChar = 'ç') then
     result := Sender.getImageIndexOfChar('C')
+  else if (AChar = 'é') then
+    result := Sender.getImageIndexOfChar('E')
+  else if (AChar = 'è') then
+    result := Sender.getImageIndexOfChar('E')
   else
     result := Sender.getImageIndexOfChar(UpperCase(AChar));
 end;
