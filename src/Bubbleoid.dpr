@@ -86,7 +86,8 @@ uses
   cButtonIcon in 'cButtonIcon.pas' {ButtonIcon: TFrame},
   uSceneHome in 'uSceneHome.pas' {SceneHome: TFrame},
   udmAdobeStock_244522135_244522157 in '..\_PRIVATE\assets\AdobeStock\AdobeStock_244522135_244522157\BubbleFontPNG\udmAdobeStock_244522135_244522157.pas' {dmAdobeStock_244522135_244522157: TDataModule},
-  cDialogBox in 'cDialogBox.pas' {DialogBox: TFrame};
+  cDialogBox in 'cDialogBox.pas' {DialogBox: TFrame},
+  uStarFieldData in 'uStarFieldData.pas';
 
 {$R *.res}
 
